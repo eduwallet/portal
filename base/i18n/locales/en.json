@@ -1,0 +1,366 @@
+{
+    "_address": {
+        "street": "Street",
+        "house_number": "House number",
+        "postal_code": "Postal code",
+        "city": "City",
+        "country": "Country"
+    },
+    "_class": {
+        "hybrid": "In person & online",
+        "in_person": "In person",
+        "online": "Online"
+    },
+    "_course_detail": {
+        "description": "About this course",
+        "learning_outcome": "Learning outcome",
+        "criteria": "Criteria",
+        "sign_up": "Sign up",
+        "edu_id": "Sign up conveniently with your eduID. If you have no eduID yet, please create one first. Then you can sign up for the course."
+    },
+    "_credential": {
+        "eduid": "eduID",
+        "edc": "European Digital Credential",
+        "enrollment": "Proof of enrollment",
+        "studentcard": "Student card",
+        "studydata": "Study data",
+        "support": "Support",
+        "exam": "Exam",
+        "result": "Result",
+        "personal_data": "Personal data",
+        "pid": "Personal ID"
+    },
+    "_entry": {
+        "first_year": "Only first year",
+        "not_first_year": "Second year and up",
+        "all": "All years"
+    },
+    "_form": {
+        "class": {
+            "label": "Format"
+        },
+        "college_year": {
+            "label": "College year"
+        },
+        "education_level": {
+            "label": "Education level",
+            "placeholder": "Education level"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "Fill in your email address"
+        },
+        "institution": {
+            "label": "Institution",
+            "placeholder": "All institutions"
+        },
+        "instruction_language": {
+            "label": "Instruction language",
+            "placeholder": "Instruction language"
+        },
+        "language_preference": {
+            "label": "Language preference",
+            "placeholder": "Language preference"
+        },
+        "location": {
+            "label": "Location"
+        },
+        "mode_of_study": {
+            "label": "Mode of study",
+            "placeholder": "Mode of study"
+        },
+        "phone_number": {
+            "label": "Phone",
+            "placeholder": "Fill in your phone number"
+        },
+        "program": {
+            "label": "Program",
+            "placeholder": "All programs"
+        },
+        "start_month": {
+            "label": "Start"
+        },
+        "study_load_range": {
+            "label": "Study load"
+        },
+        "study_points_range": {
+            "label": "Study points"
+        }
+    },
+    "_identity": {
+        "birth_date": "Date of birth",
+        "family_name": "Family name",
+        "gender": "Gender",
+        "given_name": "Given name",
+        "personal_administrative_number": "Personal administrative number"
+    },
+    "_impairment": {
+        "gravity": "Gravity adaptation syndrome (GAS)",
+        "mental": "Mental health challenges",
+        "neurodivergence": "Neurodivergence (ASS, AD(H)D, dyslexia)",
+        "physical": "Physical impairments (chronic, visual, auditive, motor)"
+    },
+    "_institution": {
+        "uvh": "University of Harderwijk",
+        "mbob": "MBO Beek",
+        "tun": "Theed University of Naboo",
+        "eur": "Erasmus University Rotterdam",
+        "ahb": "Avans Hogeschool - Breda",
+        "hbot": "HBO Terschelling",
+        "nhls": "NHL Stenden Hogeschool"
+    },
+    "_language": {
+        "bilingual": "Bilingual",
+        "de": "German",
+        "en": "English",
+        "nl": "Dutch"
+    },
+    "_mode_of_study": {
+        "deeltijd": "Parttime",
+        "duaal": "Dual",
+        "dual": "Dual",
+        "fulltime": "Fulltime",
+        "parttime": "Parttime",
+        "voltijd": "Fulltime"
+    },
+    "_notifications": {
+        "data_saved": "Your data have been saved",
+        "error": {
+            "credential_offer": "Failed to create credential offer",
+            "qr": "Failed to create QR code",
+            "verifiable_presentation": "Failed to process verifiable presentation",
+            "api": {
+                "auth": {
+                    "credential_not_found": "Credential not found",
+                    "id_required": "Field id is required",
+                    "no_eduid_in_credential": "No eduID in presented credential",
+                    "no_persona_id_in_credential": "No ID in presented credential",
+                    "persona_not_found": "Persona not found",
+                    "student_not_enrolled": "Student with EduId not enrolled in institution"
+                },
+                "course": {
+                    "already_signed_up": "You are already signed up for this course"
+                },
+                "edc": {
+                    "credential_not_found": "Credential not found",
+                    "id_required": "Field id is required",
+                    "no_awarding_body_in_credential": "No awarding body in presented credential",
+                    "no_title_in_credential": "No title in presented credential"
+                },
+                "exam": {
+                    "credential_must_contain": "Credential must contain title, code and eduId",
+                    "credential_not_found": "Credential not found",
+                    "id_required": "Field id is required",
+                    "exam_not_found": "Exam not found",
+                    "exam_not_in_institution": "Exam does not exist at this institution"
+                },
+                "failed_to_create_credential_offer": "Failed to create credential offer",
+                "pid": {
+                    "credential_not_found": "Credential not found",
+                    "id_required": "Field id is required",
+                    "no_pid_in_credential": "No Personal ID in presented credential",
+                    "persona_not_found": "Persona not found"
+                },
+                "server_error": "Internal server error",
+                "support": {
+                    "already_added": "You already have this support measure at this institution",
+                    "no_name_or_shortcode": "Missing name or shortcode in credential",
+                    "only_import_support_as_guest_student": "You can only import support as guest student"
+                }
+            }
+        },
+        "info": {
+            "exam_sign_up": "Sign up for the exam and take the exam online to complete this course.",
+            "support_import": "Are you entitled to support such as extra time during exams, then upload your support credentials to the support section of the my-website."
+        },
+        "success": {
+            "sign_up": "You are signed up",
+            "add_support": "Support has been added"
+        }
+    },
+    "_sex": {
+        "1": "male",
+        "2": "female"
+    },
+    "_support": {
+        "adjustments": "Adjustment for classes and exams",
+        "advice": "Advice and counseling",
+        "coordinator": "Our healthcare coordinator determines eligible services",
+        "diagnosed": "Do you have a chronic diagnosis that impacts your education? We offer:",
+        "eligible_for_support": "Are you eligible for support?",
+        "examples": "Examples:",
+        "extra_time": "Exam: Extra time",
+        "for_what": "For what impairment?",
+        "how_to_request": "To request support:",
+        "i_do_not_want_it": "I do not require support",
+        "i_want_it": "I want to request support",
+        "financial_support": "Financial support",
+        "oral": "Exam: Oral examination",
+        "proof": "Provide proof from a certified professional",
+        "study_advice": "'Delayed study advice (BNSA)'",
+        "study_with_impairment": "Studying with an impairment",
+        "want_to_request": "Would you like to request support?"
+    },
+    "_user_type": {
+        "student": "Student"
+    },
+    "_wallet": {
+        "advantages": "The advantages at a glance:",
+        "at_hand": "Whether you are taking courses at another institution, looking for internships, or applying for jobs, with the Wallet you always have your important information at hand.",
+        "collect_save_share": "Collect, save, and share important documents such as diplomas, certificates, and health declarations.",
+        "download": "Download a wallet",
+        "identification": "Identify yourself and log in quickly and securely to connected services and organizations.",
+        "in_your_pocket": "All your study-related information in your pocket",
+        "safe": "With a Wallet, you can securely identify yourself, log in, and store important documents such as your skills, certificates, microcredentials, and diplomas.",
+        "save_share": "Save and share all your educational credentials"
+    },
+    "_wallet2": {
+        "advantages": "The advantages at a glance:",
+        "at_hand": "Whether you are taking courses at another institution, looking for internships, or applying for jobs, with the Wallet you always have your important information at hand.",
+        "collect_save_share": "Collect, save, and share important documents such as diplomas, certificates, and health declarations.",
+        "download": "Download a wallet",
+        "identification": "Identify yourself and log in quickly and securely to connected services and organizations.",
+        "in_your_pocket": "All your study-related information in your pocket",
+        "next_step": "Ready for the next step in your career",
+        "safe": "With a Wallet, you can securely identify yourself, log in, and store important documents such as your skills, certificates, microcredentials, and diplomas.",
+        "save_share": "Save and share all your educational credentials"
+    },
+    "_wallet3": {
+        "advantages": "Advantages of the eduwallet:",
+        "at_hand": "Digital proofs of your learning outcomes at hand",
+        "identification": "Easy and secure authentication without a password",
+        "in_your_pocket": "Your digital identity (eduID) in your pocket"
+    },
+    "add_both_to_wallet": "Add both to wallet",
+    "add_to_wallet": "Add to Wallet",
+    "add_to_wallet_again": "Add to Wallet again",
+    "added_to_wallet": "Added to wallet",
+    "added_to_wallet_on": "Added to wallet on {date}",
+    "address_data": "Address",
+    "back": "Back",
+    "cancel": "Cancel",
+    "class": "Class",
+    "click_to_hide": "Click to hide",
+    "click_to_reveal": "Click to reveal",
+    "confirm": "Confirm",
+    "confirm_reset_demo": {
+        "description": "Are you sure you want to start over? All your progress will be deleted.",
+        "title": "Start from scratch",
+        "success": "All progress has been deleted"
+    },
+    "contact_data": "Contact data",
+    "course": "Course",
+    "credential": "Credential",
+    "dashboard": "Dashboard",
+    "demo_instruction": "Demo instruction",
+    "details": "Details",
+    "download": {
+        "app_store": "Download on the iOS App Store",
+        "as_verifiable_credential": "Download as verifiable credential",
+        "as_signed_pdf": "Download as signed pdf",
+        "here": "Download here",
+        "play_store": "Download on the Google Play Store",
+        "scan": "Scan the QR code with your smartphone camera"
+    },
+    "edu_id": "eduID",
+    "education_level": {
+        "occupational": "Occupational",
+        "college": "College",
+        "academic": "Academic"
+    },
+    "email": "Email",
+    "end_date": "End date",
+    "entity_not_found": "{entity} not found",
+    "explore_options": "Explore your options",
+    "follow_wallet_instructions": "Follow the instructions in your Wallet",
+    "hey": "Hey, {name}!",
+    "home": "Home",
+    "instruction_language": "Instruction language",
+    "issuance_date": "Issuance date: {date}",
+    "issued_by": "Issued by",
+    "issued_to": "Issued to",
+    "language": "Language",
+    "language_preference": "Language preference",
+    "links": "Links",
+    "loading": "Loading...",
+    "log_in": "Log in",
+    "log_in_with_eduid_no_wallet": "Log in with eduID without wallet",
+    "log_in_with_uvh_account": "Log in with UvH account",
+    "log_out": "Log out",
+    "mode_of_study": "Mode of study",
+    "next": "Next",
+    "no_results_found_for": "No results found for {query}",
+    "no_wallet_yet": "No eduwallet yet?",
+    "no_wallet_yet2": "No eduwallet yet?",
+    "number_of_results": "{count} results",
+    "phone_number": "Phone number",
+    "please_present": "Share the following data",
+    "previous": "Previous",
+    "print": "Print",
+    "proof_of_enrollment": "Proof of enrollment",
+    "save_data": "Save data",
+    "scan_qr_code": "Scan the QR code with your eduwallet app",
+    "select": "Select",
+    "share_from_wallet": "Share from your eduwallet",
+    "soon": "Soon...",
+    "sort": {
+        "institution": {
+            "asc": "Institution A-Z",
+            "desc": "Institution Z-A"
+        },
+        "name": {
+            "asc": "Name A-Z",
+            "desc": "Name Z-A"
+        }
+    },
+    "sort_by": "Sort by",
+    "source": "Source",
+    "start_date": "Start date",
+    "step_number": "Step {number}",
+    "study_data": "Study data",
+    "study_load": "Study load",
+    "successfully_sent": "Successfully sent",
+    "successfully_shared": "Successfully shared",
+    "to_somewhere": "To {somewhere}",
+    "user_type": "Role",
+    "valid_forever": "Valid forever",
+    "valid_from": "Valid from {from}.",
+    "valid_from_until": "Valid from {from} until {until}",
+    "valid_until": "Valid until {until}.",
+    "vendor": {
+        "edi": {
+            "brand": "EDI",
+            "company": "Dutch government",
+            "wallet": "NL EDI wallet"
+        },
+        "paradym": {
+            "brand": "Paradym",
+            "company": "Animo",
+            "wallet": "Paradym"
+        },
+        "sphereon": {
+            "brand": "Sphereon",
+            "company": "Sphereon",
+            "usp": "With the Sphereon wallet, you can store your own private data. Take control of your own information!",
+            "wallet": "Sphereon Wallet"
+        },
+        "unime": {
+            "brand": "Unime",
+            "company": "Impierce technologies",
+            "wallet": "Unime Wallet"
+        },
+        "wwwallet": {
+            "brand": "wwWallet",
+            "company": "The wwWallet project",
+            "usp": "A browser based wallet",
+            "wallet": "wwWallet"
+        }
+    },
+    "verified": "verified",
+    "waiting_for_qr_code": "Waiting for QR code...",
+    "wallet": "Wallet",
+    "welcome": "Welcome",
+    "welcome_user": "Welcome {name}",
+    "you_receive": "Receive the following data",
+    "you_receive_next": "Receive next"
+}

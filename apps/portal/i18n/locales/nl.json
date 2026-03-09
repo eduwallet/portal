@@ -1,0 +1,44 @@
+{
+    "_login": {
+        "1": "Op deze portal kun je je voorbereiden voor deelname aan de Eduwallet Pilot.",
+        "2": "Deelname aan de Eduwallet Pilot is op uitnodiging, dus check hiervoor je email.",
+        "3": "Ben je hier eerder geweest, log dan direct in."
+    },
+    "_checklist": {
+        "1": {
+            "title": "Download een eduwallet app",
+            "description": "Om mee te doen aan de pilot heb je een wallet op je telefoon nodig. Er zijn meerdere wallets beschikbaar, ze werken allemaal."
+        },
+        "2": {
+            "title": "Voeg je eduID toe",
+            "description": "Je wallet heeft eerst een digitale ID nodig. In het onderwijs is dat je eduID. Voeg deze toe aan je wallet."
+        },
+        "3": {
+            "title": "Voeg je pilotdeelname toe",
+            "description": "Voor deelname aan de pilot heb je een bewijs nodig. Dat krijg je als een pilot-credential. Voeg dit ook toe aan je wallet."
+        },
+        "4": {
+            "title": "Gegevens in de wallet",
+            "description": "De gegevens in de wallet kunnen alleen tijdens de pilot worden gebruikt. Na de pilot verlopen alle uitgegeven digitale bewijzen in de wallet."
+        }
+    },
+    "_welcome": {
+        "1": "Met eduwallet onderzoeken we hoe een digitale wallet op je mobiele telefoon je kan helpen om jouw studieresultaten en andere digitale bewijzen zelf te bewaren en te delen, ook na je studie.",
+        "2": "Met een wallet voor het onderwijs verzamel, bewijs en deel al je talenten met één slimme app.",
+        "3": "Doorloop onderstaande checklist met 4 stappen, zodat je klaar bent voor de eduwallet pilot!"
+    },
+    "about_the_eduwallet": "Over de eduwallet",
+    "brand": "Eduwallet Pilot Portal",
+    "brand_html": "Eduwallet<br>Pilot Portal",
+    "checklist": "Checklist",
+    "great_you_are_ready": "Fijn, je bent nu goed voorbereid!",
+    "i_understand": "Ik heb het begrepen",
+    "it_seems_like_you_are_not_signed_up_for_any_pilot": "Het lijkt erop dat je niet voor een pilot ingeschreven bent.",
+    "log_in_with_provider": "Inloggen met {provider}",
+    "pilot_info_provided_by": "De pilotinformatie wordt geleverd door <strong>{institution}</strong>. Veel succes.",
+    "ready_for_the_pilot": "Je bent voor nu klaar voor de pilot. Je kunt altijd terugkomen op deze pagina als je de wallet opnieuw moet installeren, of je eduID opnieuw in je wallet moet plaatsen.",
+    "show_wallets": "Toon wallets",
+    "start_the_pilot": "Start de pilot →",
+    "thank_you_for_participating": "Leuk dat je meedoet aan een eduwallet pilot! 🔥",
+    "welcome_first_name": "Welkom {name}"
+}

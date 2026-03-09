@@ -1,0 +1,66 @@
+{
+  "name": "nuxt-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm --filter \"./apps/**\" build",
+    "dev:portal": "pnpm --filter *portal dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.6.4",
+  "dependencies": {
+    "@chenfengyuan/vue-countdown": "2",
+    "@iconify-json/heroicons-outline": "^1.2.1",
+    "@iconify-json/mdi": "^1.2.3",
+    "@nuxt/fonts": "^0.10.0",
+    "@nuxt/ui": "^2.22.3",
+    "@nuxtjs/i18n": "^9.5.6",
+    "@pinia/nuxt": "^0.10.1",
+    "@vue/devtools-api": "^7.7.2",
+    "jose": "^6.0.10",
+    "jsonwebtoken": "^9.0.2",
+    "mime-types": "^3.0.1",
+    "nuxt-oidc-auth": "1.0.0-beta.5",
+    "nuxt-svgo": "^4.0.15",
+    "pinia": "^3.0.1",
+    "pinia-plugin-persistedstate": "^4.2.0",
+    "qrcode.vue": "^3.6.0",
+    "undici": "^7.18.2",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9",
+    "@types/mime-types": "^2.1.4",
+    "nuxt": "^3.19.0",
+    "typescript": "^5.7.2",
+    "vue-tsc": "^2.2.0",
+    "webpack": "^5.105.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "glob": "^10.5.0",
+      "minimatch": "^3.1.3",
+      "jws": "^3.2.3",
+      "serialize-javascript": "^7.0.3",
+      "svgo": "^3.3.3",
+      "brace-expansion": "^2.0.2",
+      "esbuild": "^0.25.0",
+      "js-yaml": "^4.1.1",
+      "lodash": "^4.17.23",
+      "ajv": "^8.18.0",
+      "@nuxt/devtools": "^2.6.4",
+      "h3": "^1.15.5",
+      "node-forge": "^1.3.2",
+      "tar": "^7.5.3",
+      "@intlify/core": "^10.0.8",
+      "koa": "^2.16.4",
+      "webpack": "5.105.3",
+      "@eslint/plugin-kit": "^0.3.4"
+    }
+  }
+}

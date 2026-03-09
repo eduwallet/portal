@@ -1,0 +1,7 @@
+packages:
+  - "base"
+  - "apps/portal"
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - esbuild

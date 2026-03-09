@@ -1,0 +1,13 @@
+{
+  "name": "portal",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@surf/nuxt-base": "workspace:*"
+  }
+}

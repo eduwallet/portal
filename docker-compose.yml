@@ -1,0 +1,244 @@
+services:
+  traefik:
+    image: traefik
+    command:
+      - "--providers.docker=true"
+      - "--entryPoints.websecure.address=:443"
+      - "--certificatesresolvers.eduwallet.acme.tlschallenge=true"
+      - "--certificatesresolvers.eduwallet.acme.storage=/certificates/acme.json"
+    restart: unless-stopped
+    ports:
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - $PWD/config/traefik:/certificates
+
+  registration:
+    image: apps/registration
+    build:
+      target: registration
+    restart: unless-stopped
+    environment:
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_registration.entrypoints: websecure
+      traefik.http.routers.node_registration.rule: Host(`aanmelden.dev.eduwallet.nl`)
+      traefik.http.routers.node_registration.tls.certresolver: eduwallet
+      traefik.http.services.node_registration.loadbalancer.server.port: 3000
+
+  uvh-my:
+    image: apps/uvh-my
+    build:
+      target: uvh-my
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_uvh.entrypoints: websecure
+      traefik.http.routers.node_uvh.rule: Host(`mijn.uvh.dev.eduwallet.nl`)
+      traefik.http.routers.node_uvh.tls.certresolver: eduwallet
+      traefik.http.services.node_uvh.loadbalancer.server.port: 3000
+
+  mbob-my:
+    image: apps/mbob-my
+    build:
+      target: mbob-my
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_mbob.entrypoints: websecure
+      traefik.http.routers.node_mbob.rule: Host(`mijn.mbob.dev.eduwallet.nl`)
+      traefik.http.routers.node_mbob.tls.certresolver: eduwallet
+      traefik.http.services.node_mbob.loadbalancer.server.port: 3000
+
+  hbot-my:
+    image: apps/hbot-my
+    build:
+      target: hbot-my
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_hbot.entrypoints: websecure
+      traefik.http.routers.node_hbot.rule: Host(`mijn.hbot.dev.eduwallet.nl`)
+      traefik.http.routers.node_hbot.tls.certresolver: eduwallet
+      traefik.http.services.node_hbot.loadbalancer.server.port: 3000
+
+  uvh-exam:
+    image: apps/uvh-exam
+    build:
+      target: uvh-exam
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_uvh_exam.entrypoints: websecure
+      traefik.http.routers.node_uvh_exam.rule: Host(`toetsen.uvh.dev.eduwallet.nl`)
+      traefik.http.routers.node_uvh_exam.tls.certresolver: eduwallet
+      traefik.http.services.node_uvh_exam.loadbalancer.server.port: 3000
+
+  mbob-exam:
+    image: apps/mbob-exam
+    build:
+      target: mbob-exam
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_mbob_exam.entrypoints: websecure
+      traefik.http.routers.node_mbob_exam.rule: Host(`toetsen.mbob.dev.eduwallet.nl`)
+      traefik.http.routers.node_mbob_exam.tls.certresolver: eduwallet
+      traefik.http.services.node_mbob_exam.loadbalancer.server.port: 3000
+
+  hbot-exam:
+    image: apps/hbot-exam
+    build:
+      target: hbot-exam
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_hbot_exam.entrypoints: websecure
+      traefik.http.routers.node_hbot_exam.rule: Host(`toetsen.hbot.dev.eduwallet.nl`)
+      traefik.http.routers.node_hbot_exam.tls.certresolver: eduwallet
+      traefik.http.services.node_hbot_exam.loadbalancer.server.port: 3000
+
+  movm-vacancies:
+    image: apps/movm-vacancies
+    build:
+      target: movm-vacancies
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_movm.entrypoints: websecure
+      traefik.http.routers.node_movm.rule: Host(`movemotion.dev.eduwallet.nl`)
+      traefik.http.routers.node_movm.tls.certresolver: eduwallet
+      traefik.http.services.node_movm.loadbalancer.server.port: 3000
+
+  home:
+    image: apps/home
+    build:
+      target: home
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_home.entrypoints: websecure
+      traefik.http.routers.node_home.rule: Host(`www.dev.eduwallet.nl`)
+      traefik.http.routers.node_home.tls.certresolver: eduwallet
+      traefik.http.services.node_home.loadbalancer.server.port: 3000
+
+  portal:
+    image: apps/portal
+    build:
+      target: portal
+    restart: unless-stopped
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      NUXT_VERIFIER_TOKEN: ${NUXT_VERIFIER_TOKEN}
+      NUXT_ISSUER_TOKEN: ${NUXT_ISSUER_TOKEN}
+      NUXT_PUBLIC_API_BASE_URL: ${NUXT_PUBLIC_API_BASE_URL}
+      NUXT_PUBLIC_IMAGE_BASE_URL: ${NUXT_PUBLIC_IMAGE_BASE_URL}
+      NUXT_PUBLIC_AGENT_BASE_URL: ${NUXT_PUBLIC_AGENT_BASE_URL}
+      NUXT_PUBLIC_VERIFIER_BASE_URL: ${NUXT_PUBLIC_VERIFIER_BASE_URL}
+      NUXT_PUBLIC_DEPLOYMENT_STAGE: ${NUXT_PUBLIC_DEPLOYMENT_STAGE}
+      NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN: ${NUXT_PUBLIC_DEPLOYMENT_COOKIEDOMAIN}
+      NUXT_PUBLIC_EDUID_ISSUER_BASE_URL: ${NUXT_PUBLIC_EDUID_ISSUER_BASE_URL}
+      NUXT_EDUID_ISSUER_TOKEN: ${NUXT_EDUID_ISSUER_TOKEN}
+      NUXT_OIDC_PROVIDERS_OIDC_REDIRECT_URI: ${NUXT_OIDC_PROVIDERS_OIDC_REDIRECT_URI}
+      NUXT_OIDC_PROVIDERS_OIDC_AUTHORIZATION_URL: ${NUXT_OIDC_PROVIDERS_OIDC_AUTHORIZATION_URL}
+      NUXT_OIDC_PROVIDERS_OIDC_TOKEN_URL: ${NUXT_OIDC_PROVIDERS_OIDC_TOKEN_URL}
+      NUXT_OIDC_PROVIDERS_OIDC_OPENID_CONFIGURATION: ${NUXT_OIDC_PROVIDERS_OIDC_OPENID_CONFIGURATION}
+      NUXT_OIDC_PROVIDERS_OIDC_CLIENT_SECRET: ${NUXT_OIDC_PROVIDERS_OIDC_CLIENT_SECRET}
+      NUXT_OIDC_PROVIDERS_OIDC_CLIENT_ID: ${NUXT_OIDC_PROVIDERS_OIDC_CLIENT_ID}
+      NUXT_OIDC_SESSION_SECRET: ${NUXT_OIDC_SESSION_SECRET}
+      NUXT_OIDC_TOKEN_KEY: ${NUXT_OIDC_TOKEN_KEY}
+      NUXT_OIDC_AUTH_SESSION_SECRET: ${NUXT_OIDC_AUTH_SESSION_SECRET}
+    labels:
+      traefik.enable: true
+      traefik.http.routers.node_portal.entrypoints: websecure
+      traefik.http.routers.node_portal.rule: Host(`portal.dev.eduwallet.nl`)
+      traefik.http.routers.node_portal.tls.certresolver: eduwallet
+      traefik.http.services.node_portal.loadbalancer.server.port: 3000

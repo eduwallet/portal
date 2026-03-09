@@ -1,0 +1,45 @@
+
+{
+    "_login": {
+        "1": "On this portal, you can prepare for participation in the Eduwallet Pilot.",
+        "2": "Participation in the Eduwallet Pilot is by invitation only, so please check your email for this.",
+        "3": "If you have been here before, please log in directly."
+    },
+    "_checklist": {
+        "1": {
+            "title": "Download an eduwallet app",
+            "description": "To join the pilot, you need a wallet on your phone. Several wallets are available, all of them work."
+        },
+        "2": {
+            "title": "Add your eduID",
+            "description": "Your wallet needs a digital ID first. In education this is your eduID. Add it to your wallet."
+        },
+        "3": {
+            "title": "Add your pilot participation",
+            "description": "To join the pilot, you need proof. This comes as a pilot credential. Add it to your wallet too."
+        },
+        "4": {
+            "title": "Data in the wallet",
+            "description": "The data in the wallet can only be used during the pilot. After the pilot, all issued digital credentials in the wallet will expire."
+        }
+    },
+    "_welcome": {
+        "1": "With eduwallet, we're exploring how a digital wallet on your mobile phone can help you store and share your academic results and other digital proofs, even after your studies.",
+        "2": "With a wallet for education, you can collect, prove, and share all your talents with one clever app.",
+        "3": "Go through the checklist below with 4 steps, so you are ready for the eduwallet pilot!"
+    },
+    "about_the_eduwallet": "About the eduwallet",
+    "brand": "Eduwallet Pilot Portal",
+    "brand_html": "Eduwallet<br>Pilot Portal",
+    "checklist": "Checklist",
+    "great_you_are_ready": "Great, you are all set!",
+    "i_understand": "I understand",
+    "it_seems_like_you_are_not_signed_up_for_any_pilot": "It seems like you are not signed up for any pilot.",
+    "log_in_with_provider": "Log in with {provider}",
+    "pilot_info_provided_by": "The pilot information is provided by <strong>{institution}</strong>. Good luck.",
+    "ready_for_the_pilot": "You are now ready for the pilot. You can always return to this page if you need to reinstall the wallet or re-add your eduID to your wallet.",
+    "show_wallets": "Show wallets",
+    "start_the_pilot": "Start the pilot →",
+    "thank_you_for_participating": "Thank you for participating in a pilot with eduwallet! 🔥",
+    "welcome_first_name": "Welcome {name}"
+}

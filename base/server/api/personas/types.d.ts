@@ -1,0 +1,35 @@
+export interface Persona {
+    _ID: string;
+    uid: string;
+    eduPersonUniqueId: string;
+    eduPersonPrincipalName: string;
+    givenName: string;
+    sn: string;
+    displayName: string;
+    schacHomeOrganization: string;
+    mail: string;
+    eduPersonAffiliation: string[];
+    eduPersonScopedAffiliation: string[];
+    eduPersonEntitlement: string[];
+    eduPersonAssurance: string[];
+    _ttl: string;
+    Student_ID: string;
+    IsStudent: string;
+    StudentType: string;
+    Gender: string;
+    GivenName: string;
+    Surname: string;
+    Type: string;
+    StreetAddress: string;
+    City: string;
+    ZipCode: string;
+    CountryFull: string;
+    PrivateEmailAddress: string;
+    TelephoneNumber: string;
+    TelephoneCountryCode: string;
+    BSN: string;
+    Nationality: string;
+    DoB: string;
+    _PBD: string;
+    fakeLanguage?: string;
+  }

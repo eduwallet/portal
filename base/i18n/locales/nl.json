@@ -1,0 +1,367 @@
+{
+    "_address": {
+        "street": "Straat",
+        "house_number": "Huisnummer",
+        "postal_code": "Postcode",
+        "city": "Plaats",
+        "country": "Land"
+    },
+    "_class": {
+        "hybrid": "Fysiek & online",
+        "in_person": "Fysiek",
+        "online": "Online"
+    },
+    "_course_detail": {
+        "description": "Over deze cursus",
+        "learning_outcome": "Leeruitkomsten",
+        "criteria": "Voorkennis",
+        "sign_up": "Inschrijven",
+        "edu_id": "Je schrijft je eenvoudig in met eduID. Heb je nog geen eduID, maak deze dan eerst aan. Schrijf je vervolgens hiernaast in voor de cursus."
+    },
+    "_credential": {
+        "eduid": "eduID",
+        "edc": "Europees Digitaal Credential",
+        "enrollment": "Bewijs van inschrijving",
+        "studentcard": "Collegekaart",
+        "studydata": "Studiegegevens",
+        "support": "Ondersteuning",
+        "exam": "Tentameninschrijving",
+        "result": "Studieresultaat",
+        "personal_data": "Persoonlijke gegevens",
+        "pid": "Persoonlijk ID"
+    },
+    "_entry": {
+        "first_year": "Alleen eerstejaars",
+        "not_first_year": "Alleen hogerejaars",
+        "all": "Zowel eerste- als hogerejaars"
+    },
+    "_form": {
+        "class": {
+            "label": "Onderwijsvorm"
+        },
+        "college_year": {
+            "label": "Collegejaar"
+        },
+        "education_level": {
+            "label": "Opleidingsniveau",
+            "placeholder": "Opleidingsniveau"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "Vul je e-mailadres in"
+        },
+        "institution": {
+            "label": "Onderwijsinstelling",
+            "placeholder": "Alle instellingen"
+        },
+        "instruction_language": {
+            "label": "Voertaal",
+            "placeholder": "Voertaal"
+        },
+        "language_preference": {
+            "label": "Taalvoorkeur",
+            "placeholder": "Taalvoorkeur"
+        },
+        "location": {
+            "label": "Locatie"
+        },
+        "mode_of_study": {
+            "label": "Opleidingsvorm",
+            "placeholder": "Opleidingsvorm"
+        },
+        "phone_number": {
+            "label": "Telefoonnummer",
+            "placeholder": "Vul je telefoonnummer in"
+        },
+        "program": {
+            "label": "Opleiding",
+            "placeholder": "Alle opleidingen"
+        },
+        "start_month": {
+            "label": "Start"
+        },
+        "study_load_range": {
+            "label": "Studielast"
+        },
+        "study_points_range": {
+            "label": "Studiepunten"
+        }
+    },
+    "_identity": {
+        "birth_date": "Geboortedatum",
+        "family_name": "Achternaam",
+        "gender": "Geslacht",
+        "given_name": "Voornaam",
+        "personal_administrative_number": "BSN"
+    },
+    "_impairment": {
+        "gravity": "Zwaartekracht-adaptatie syndroom (ZAS)",
+        "mental": "Mentale gezondheidsuitdagingen",
+        "neurodivergence": "Neurodivergentie (ASS, AD(H)D, dyslexie)",
+        "oral": "Tentamenvoorziening: Mondelinge afname",
+        "physical": "Fysieke beperkingen (chronisch, visueel, auditief, motorisch)"
+    },
+    "_institution": {
+        "uvh": "Universiteit van Harderwijk",
+        "mbob": "MBO Beek",
+        "tun": "Theed University of Naboo",
+        "eur": "Erasmus Universiteit Rotterdam",
+        "ahb": "Avans Hogeschool - Breda",
+        "hbot": "HBO Terschelling",
+        "nhls": "NHL Stenden Hogeschool"
+    },
+    "_language": {
+        "bilingual": "Tweetalig",
+        "de": "Duits",
+        "en": "Engels",
+        "nl": "Nederlands"
+    },
+    "_mode_of_study": {
+        "deeltijd": "Deeltijd",
+        "duaal": "Duaal",
+        "dual": "Duaal",
+        "fulltime": "Voltijd",
+        "parttime": "Deeltijd",
+        "voltijd": "Voltijd"
+    },
+    "_notifications": {
+        "data_saved": "Je gegevens zijn opgeslagen",
+        "error": {
+            "credential_offer": "Fout tijdens het aanmaken van het credential",
+            "qr": "Fout tijdens het aanmaken van de QR code",
+            "verifiable_presentation": "Fout bij het verwerken van het credential",
+            "api": {
+                "auth": {
+                    "credential_not_found": "Credential niet gevonden",
+                    "id_required": "Veld id is vereist",
+                    "no_eduid_in_credential": "Geen eduID in gepresenteerd credential",
+                    "no_persona_id_in_credential": "Geen ID in gepresenteerd credential",
+                    "persona_not_found": "Persona niet gevonden",
+                    "student_not_enrolled": "Student met eduID is niet aangemeld bij dit instituut"
+                },
+                "course": {
+                    "already_signed_up": "Je bent al ingeschreven voor deze cursus"
+                },
+                "edc": {
+                    "credential_not_found": "Credential niet gevonden",
+                    "id_required": "Veld id is vereist",
+                    "no_awarding_body_in_credential": "Geen instituut in gepresenteerd credential",
+                    "no_title_in_credential": "Geen titel in gepresenteerd credential"
+                },
+                "exam": {
+                    "credential_must_contain": "Credential moet titel, code en eduID bevatten",
+                    "credential_not_found": "Credential niet gevonden",
+                    "id_required": "Veld id is vereist",
+                    "exam_not_found": "Toets niet gevonden",
+                    "exam_not_in_institution": "Toets bestaat niet bij dit instituut"
+                },
+                "failed_to_create_credential_offer": "Credential kon niet aangemaakt worden",
+                "pid": {
+                    "credential_not_found": "Credential niet gevonden",
+                    "id_required": "Veld id is vereist",
+                    "no_pid_in_credential": "Geen Persoonlijk ID in gepresenteerd credential",
+                    "persona_not_found": "Persona niet gevonden"
+                },
+                "server_error": "Interne server error",
+                "support": {
+                    "already_added": "Deze ondersteuningsmaatregel is al bekend bij dit instituut",
+                    "no_name_or_shortcode": "Het credential bevat geen naam of shortcode",
+                    "only_import_support_as_guest_student": "Je kunt alleen als gaststudent verklaringen toevoegen"
+                }
+            }
+        },
+        "info": {
+            "exam_sign_up": "Schrijf je in voor de toets en maak de toets online om deze cursus af te ronden.",
+            "support_import": "Heb je recht op ondersteuning voor bijvoorbeeld extra tijd tijdens toetsen, upload je verklaring dan direct op de ondersteuning pagina van de mijn-omgeving."
+        },
+        "success": {
+            "sign_up": "Inschrijven gelukt",
+            "add_support": "Ondersteuning toegevoegd"
+        }
+    },
+    "_sex": {
+        "1": "man",
+        "2": "vrouw"
+    },
+    "_support": {
+        "adjustments": "Aanpassingen voor lessen en examens",
+        "advice": "Advies en begeleiding",
+        "coordinator": "Onze zorgcoördinator bepaalt passende diensten",
+        "diagnosed": "Heb je een gediagnosticeerde chronische aandoening die je studie belemmert? Wij bieden:",
+        "eligible_for_support": "Heb je recht op ondersteuning?",
+        "examples": "Voorbeelden zijn:",
+        "extra_time": "Tentamenvoorziening: Extra tijd",
+        "for_what": "Voor welke functiebeperking?",
+        "how_to_request": "Om ondersteuning aan te vragen:",
+        "i_do_not_want_it": "Ik heb geen ondersteuning nodig",
+        "i_want_it": "Ik wil ondersteuning aanvragen",
+        "financial_support": "Financiële steun",
+        "oral": "Tentamenvoorziening: Mondelinge afname",
+        "proof": "Verstrek een verklaring van een erkende professional",
+        "study_advice": "Uitgesteld studieadvies (BNSA)",
+        "study_with_impairment": "Studeren met een functiebeperking",
+        "want_to_request": "Wil je ondersteuning aanvragen?"
+    },
+    "_user_type": {
+        "student": "Student"
+    },
+    "_wallet": {
+        "advantages": "De voordelen op een rijtje:",
+        "at_hand": "Of je nu vakken volgt aan een andere instelling, stages zoekt of solliciteert, met de Wallet heb je al je belangrijke informatie altijd bij de hand.",
+        "collect_save_share": "Verzamel, bewaar en deel belangrijke documenten zoals diploma's, certificaten en gezondheidsverklaringen.",
+        "download": "Download een wallet",
+        "identification": "Identificeer jezelf en log snel en veilig in bij aangesloten diensten en organisaties.",
+        "in_your_pocket": "Al je studie gerelateerde informatie in je broekzak",
+        "safe": "Met een Wallet kun je je veilig identificeren, inloggen en belangrijke documenten bewaren zoals je vaardigheden, certificaten, microcredentials en diploma's",
+        "save_share": "Bewaar en deel al je educatieve bewijzen"
+    },
+    "_wallet2": {
+        "advantages": "eduwallet voordelen:",
+        "at_hand": "Digitale bewijzen van je leerresultaten bij de hand",
+        "collect_save_share": "Met een wallet voor het onderwijs verzamel, bewijs en deel al je talenten met één slimme app.",
+        "download": "Download nu jouw wallet",
+        "identification": "Makkelijk en veilig inloggen zonder wachtwoord.",
+        "in_your_pocket": "Je digitale identiteit (eduID) in je binnenzak",
+        "next_step": "Klaar voor elke volgende stap in je carrière",
+        "safe": "Veilige identificatie & supersnel inloggen",
+        "save_share": "Bewaar en deel al je educatieve bewijzen"
+    },
+    "_wallet3": {
+        "advantages": "De eduwallet voordelen:",
+        "at_hand": "Digitale bewijzen van je leerresultaten bij de hand",
+        "identification": "Makkelijk en veilig inloggen zonder wachtwoord.",
+        "in_your_pocket": "Je digitale identiteit (eduID) in je binnenzak"
+    },
+    "address_data": "Adresgegevens",
+    "add_both_to_wallet": "Beiden toevoegen wallet",
+    "add_to_wallet": "Toevoegen aan Wallet",
+    "add_to_wallet_again": "Nogmaals toevoegen aan Wallet",
+    "added_to_wallet": "Toegevoegd aan wallet",
+    "added_to_wallet_on": "Toegevoegd aan een wallet op {date}",
+    "back": "Terug",
+    "cancel": "Annuleren",
+    "class": "Les",
+    "click_to_hide": "Klik om te verbergen",
+    "click_to_reveal": "Klik om te tonen",
+    "confirm": "Bevestigen",
+    "confirm_reset_demo": {
+        "description": "Weet je zeker dat je opnieuw wilt beginnen? Alle voortgang wordt volledig gewist.",
+        "title": "Opnieuw beginnen",
+        "success": "Alle gegevens zijn gewist"
+    },
+    "contact_data": "Contactgegevens",
+    "course": "Cursus",
+    "credential": "Credential",
+    "dashboard": "Dashboard",
+    "demo_instruction": "Demo instructie",
+    "details": "Details",
+    "download": {
+        "app_store": "Download in the iOS App Store",
+        "as_verifiable_credential": "Download als verifiable credential",
+        "as_signed_pdf": "Download als ondertekende pdf",
+        "here": "Download hier",
+        "play_store": "Download in the Google Play Store",
+        "scan": "Scan de QR code met de camera van je telefoon"
+    },
+    "edu_id": "eduID",
+    "education_level": {
+        "occupational": "MBO",
+        "college": "HBO",
+        "academic": "WO"
+    },
+    "email": "E-mailadres",
+    "end_date": "Einddatum",
+    "entity_not_found": "{entity} niet gevonden",
+    "explore_options": "Ontdek de mogelijkheden",
+    "follow_wallet_instructions": "Volg de instructies in je Wallet",
+    "hey": "Hoi, {name}!",
+    "home": "Home",
+    "instruction_language": "Voertaal",
+    "issuance_date": "Uitgiftedatum: {date}",
+    "issued_by": "Uitgegeven door",
+    "issued_to": "Uitgegeven aan",
+    "language": "Taal",
+    "language_preference": "Taalvoorkeur",
+    "links": "Snelkoppelingen",
+    "loading": "Laden...",
+    "log_in": "Inloggen",
+    "log_in_with_eduid_no_wallet": "Log in met eduID zonder wallet",
+    "log_in_with_uvh_account": "Log in met UvH account",
+    "log_out": "Uitloggen",
+    "mode_of_study": "Studie type",
+    "next": "Volgende",
+    "no_results_found_for": "Geen resultaten gevonden voor {query}",
+    "no_wallet_yet": "Nog geen eduwallet?",
+    "no_wallet_yet2": "Heb jij nog geen eduwallet?",
+    "number_of_results": "{count} resultaten",
+    "phone_number": "Telefoonnummer",
+    "please_present": "Deel de volgende gegevens",
+    "previous": "Vorige",
+    "print": "Print",
+    "proof_of_enrollment": "Bewijs van inschrijving",
+    "save_data": "Gegevens opslaan",
+    "scan_qr_code": "scan de QR code met je eduwallet app",
+    "share_from_wallet": "Deel vanuit je eduwallet",
+    "select": "Selecteer",
+    "soon": "Binnenkort",
+    "sort": {
+        "institution": {
+            "asc": "Instelling A-Z",
+            "desc": "Instelling Z-A"
+        },
+        "name": {
+            "asc": "Naam A-Z",
+            "desc": "Naam Z-A"
+        }
+    },
+    "sort_by": "Sorteer op",
+    "source": "Bron",
+    "start_date": "Startdatum",
+    "step_number": "Stap {number}",
+    "study_data": "Studiegegevens",
+    "study_load": "Studiebelasting",
+    "successfully_sent": "Versturen succesvol",
+    "successfully_shared": "Delen succesvol",
+    "to_somewhere": "Naar {somewhere}",
+    "user_type": "Aanstelling",
+    "valid_forever": "Onbeperkt geldig",
+    "valid_from": "Geldig vanaf {from}.",
+    "valid_from_until": "Geldig van {from} t/m {until}",
+    "valid_until": "Geldig t/m {until}.",
+    "vendor": {
+        "edi": {
+            "brand": "EDI",
+            "company": "Nederlandse overheid",
+            "wallet": "NL EDI wallet"
+        },
+        "paradym": {
+            "brand": "Paradym",
+            "company": "Animo",
+            "wallet": "Paradym"
+        },
+        "sphereon": {
+            "brand": "Sphereon",
+            "company": "Sphereon",
+            "usp": "Met de Sphereon wallet kunt u uw eigen privégegevens opslaan. Neem de regie over uw eigen informatie!",
+            "wallet": "Sphereon Wallet"
+        },
+        "unime": {
+            "brand": "Unime",
+            "company": "Impierce technologies",
+            "wallet": "Unime Wallet"
+        },
+        "wwwallet": {
+            "brand": "wwWallet",
+            "company": "The wwWallet project",
+            "usp": "Een wallet die werkt in je browser",
+            "wallet": "wwWallet"
+        }
+    },
+    "verified": "geverifiëerd",
+    "waiting_for_qr_code": "Wachten op QR-code...",
+    "wallet": "Wallet",
+    "welcome": "Welkom",
+    "welcome_user": "Welkom {name}",
+    "you_receive": "Ontvang de volgende gegevens",
+    "you_receive_next": "Ontvang hierna"
+}

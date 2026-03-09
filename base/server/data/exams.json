@@ -1,0 +1,58 @@
+[
+    {
+        "id": "fa9b6fae-00d0-43e2-8cb5-1dc89ab87441",
+        "programId": "4d36925e-3391-4dab-a93d-63c11caa48ae",
+        "institutionId": "99b6dc88-97ff-4726-8fb0-a1c2c9015aa2",
+        "name": "Inleiding Gedrag in Organisatie en Werk",
+        "code": "BA0876",
+        "signupFrom": "2025-01-20",
+        "outcome": "De student heeft inzicht gekregen in menselijk gedrag binnen organisaties en leert hoe dit gedrag wordt beïnvloed door structuur, cultuur en samenwerking. De student heeft vaardigheden ontwikkeld om gedrag te analyseren en te sturen ter bevordering van een productieve werkomgeving.",
+        "language": "nl",
+        "criteria": "Je toont aan de hand van te maken opdrachten aan dat je in voldoende mate voldoet aan de leeruitkomsten.",
+        "eqf": 6,
+        "participation": "Gemengd",
+        "quality": "Kwaliteitskader Microcredentials voor Professionals HBO en WO"
+    },
+    {
+        "id": "6ba3f162-f1b0-4c7d-bd6f-55366cebf809",
+        "programId": "4d36925e-3391-4dab-a93d-63c11caa48ae",
+        "institutionId": "99b6dc88-97ff-4726-8fb0-a1c2c9015aa2",
+        "name": "Inleiding Verantwoordelijke Organisatie",
+        "code": "BA0884",
+        "signupFrom": "2025-10-29",
+        "outcome": "De student heeft inzicht gekregen in menselijk gedrag binnen organisaties en leert hoe dit gedrag wordt beïnvloed door structuur, cultuur en samenwerking. De student heeft vaardigheden ontwikkeld om gedrag te analyseren en te sturen ter bevordering van een productieve werkomgeving.",
+        "language": "nl",
+        "criteria": "Je toont aan de hand van te maken opdrachten aan dat je in voldoende mate voldoet aan de leeruitkomsten.",
+        "eqf": 6,
+        "participation": "Gemengd",
+        "quality": "Kwaliteitskader Microcredentials voor Professionals HBO en WO"
+    },
+    {
+        "id": "303b739f-3d77-4253-9529-d601b1aa2f61",
+        "programId": "4d36925e-3391-4dab-a93d-63c11caa48ae",
+        "institutionId": "99b6dc88-97ff-4726-8fb0-a1c2c9015aa2",
+        "name": "Academische Vaardigheden Bedrijfskunde",
+        "code": "BA0345",
+        "signupFrom": "2025-10-29",
+        "outcome": "De student heeft inzicht gekregen in menselijk gedrag binnen organisaties en leert hoe dit gedrag wordt beïnvloed door structuur, cultuur en samenwerking. De student heeft vaardigheden ontwikkeld om gedrag te analyseren en te sturen ter bevordering van een productieve werkomgeving.",
+        "language": "nl",
+        "criteria": "Je toont aan de hand van te maken opdrachten aan dat je in voldoende mate voldoet aan de leeruitkomsten.",
+        "eqf": 6,
+        "participation": "Gemengd",
+        "quality": "Kwaliteitskader Microcredentials voor Professionals HBO en WO"
+    },
+    {
+        "id": "7d6ce235-dc49-4664-af18-e4c7d09e03bc",
+        "programId": "4d36925e-3391-4dab-a93d-63c11caa48ae",
+        "institutionId": "99b6dc88-97ff-4726-8fb0-a1c2c9015aa2",
+        "name": "Economie voor Bedrijfskunde",
+        "code": "BA0857",
+        "signupFrom": "2025-01-20",
+        "outcome": "De student heeft inzicht gekregen in menselijk gedrag binnen organisaties en leert hoe dit gedrag wordt beïnvloed door structuur, cultuur en samenwerking. De student heeft vaardigheden ontwikkeld om gedrag te analyseren en te sturen ter bevordering van een productieve werkomgeving.",
+        "language": "nl",
+        "criteria": "Je toont aan de hand van te maken opdrachten aan dat je in voldoende mate voldoet aan de leeruitkomsten.",
+        "eqf": 6,
+        "participation": "Gemengd",
+        "quality": "Kwaliteitskader Microcredentials voor Professionals HBO en WO"
+    }
+]

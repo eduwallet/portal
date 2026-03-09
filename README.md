@@ -2,38 +2,14 @@
 
 ## Local development
 
-Copy the `.env.example` files to `.env` and fill in the missing secret values
+Copy the `.env.example` files to `.env` in ./apps/portal and fill in the missing secret values
 
 ```
 pnpm install
 ```
 
-### Registration
+### Run
 
 ```
-pnpm dev:registration
-```
-
-### My
-
-```
-pnpm dev:my
-```
-
-### Exam
-
-```
-pnpm dev:exam
-```
-
-### Vacancies
-
-```
-pnpm dev:vacancies
-```
-
-### Home
-
-```
-pnpm dev:home
+pnpm dev:portal
 ```

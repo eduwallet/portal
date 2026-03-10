@@ -5,3 +5,7 @@ packages:
 onlyBuiltDependencies:
   - "@parcel/watcher"
   - esbuild
+
+catalogs:
+  default: # Explicitly named default catalog
+    typescript: ^5.7.2

@@ -1,45 +1,53 @@
-# ----------------------------
+# ─────────────────────────────────────────────────────
 # 1️⃣  Builder stage
-# ----------------------------
-FROM cgr.dev/chainguard/node:latest-dev AS builder
+# ─────────────────────────────────────────────────────
+FROM node:22-alpine AS builder
 
-USER root
 ENV PNPM_HOME="/pnpm" \
     PATH="$PNPM_HOME:$PATH" \
     PNPM_STORE_PATH="/pnpm/store"
-RUN mkdir -p /pnpm/store && chown -R node:node /pnpm
-RUN npm install -g pnpm@10
+RUN corepack enable && corepack prepare pnpm@10.6.4 --activate
 
-USER node
 WORKDIR /workspace
 
-COPY --chown=node:node . .
+# ── Phase 1: manifests only ──────────────────────────
+# Copy all package.json + workspace config before source.
+# As long as dependencies don't change, `pnpm install` is fully cached.
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store,uid=65532,gid=65532 \
+# Shared base layer + feature layers
+COPY base/package.json              ./base/
+
+# App manifests
+COPY apps/portal/package.json         ./apps/portal/
+
+RUN --mount=type=cache,id=pnpm-portal,target=/pnpm/store \
     pnpm install --frozen-lockfile
+
+# ── Phase 2: source ──────────────────────────────────
+# Invalidates the build step on source changes,
+# but the install layer above stays cached.
+COPY . .
 
 RUN pnpm run build
 
-# ----------------------------
-# 2️⃣  Runtime stage
-# ----------------------------
-FROM cgr.dev/chainguard/node:latest AS portal
+# Fill missing transitive deps of Nitro-externalised packages.
+# Nitro's tracer misses some transitive deps (e.g. @unhead/shared);
+# this script copies only what's missing into each app's .output/server/node_modules/.
+RUN for app in apps/portal ; do \
+      (cd $app && node /workspace/scripts/fill-externals.mjs) ; \
+    done
 
+# ─────────────────────────────────────────────────────
+# 2️⃣  Runtime stages — one per app
+# Each copies only its own .output/ (~30–60 MB compressed).
+# ─────────────────────────────────────────────────────
+
+FROM node:22-alpine AS portal
 USER node
 WORKDIR /app
-
-# Nuxt 3 / Nitro output is fully self-contained — no pnpm deploy needed.
-# .output/server/ includes its own bundled node_modules.
-COPY --from=builder --chown=node:node /workspace/.output ./.output
-
-ENV NODE_ENV=production
-ENV HOST=0.0.0.0
-ENV PORT=3000
-# Node.js v22+ ships localStorage as a global stub; without --localstorage-file
-# the object exists but methods throw, crashing @vue/devtools-kit at SSR init.
-ENV NODE_OPTIONS="--no-experimental-webstorage"
-
+COPY --from=builder --chown=node:node /workspace/apps/portal/.output ./.output
+ENV NODE_ENV=production HOST=0.0.0.0 PORT=3000
 EXPOSE 3000
-
-# Chainguard node:latest ENTRYPOINT is /usr/bin/node — pass script as CMD
+ENTRYPOINT ["node"]
 CMD [".output/server/index.mjs"]

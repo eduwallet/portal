@@ -4,9 +4,6 @@
             v-if="isLoggedIn"
             class="account__details"
         >
-            <p class="account__username">
-                {{ fullName }}
-            </p>
             <button
                 v-if="loggedIn"
                 class="account__logout"
@@ -22,12 +19,11 @@
 import { usePortalStore } from '@surf/nuxt-base/stores/portal';
 import { computed } from 'vue';
 
-const { loggedIn, user, logout, clear } = useOidcAuth();
+const { loggedIn, logout, clear } = useOidcAuth();
 
 const portalStore = usePortalStore();
 
-const isLoggedIn = computed(() => portalStore.firstName !== '');
-const fullName = computed(() => portalStore.fullName);
+const isLoggedIn = computed(() => portalStore.pilotLink !== '');
 
 const logOut = () => {
     portalStore.$reset();

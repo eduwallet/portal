@@ -1,9 +1,9 @@
 <template>
     <h1
-        v-if="portalStore.firstName"
+        v-if="pilotId"
         class="mt-8 text-black"
     >
-        {{ $t('welcome_first_name', { name: portalStore.firstName }) }}
+        {{ $t('welcome') }}
     </h1>
     <div v-if="!pilotId">
         <div class="flex flex-col gap-8">
@@ -150,7 +150,7 @@ import { UButton } from '#components';
 import { usePortalStore } from '@surf/nuxt-base/stores/portal';
 import * as jose from 'jose'
 
-const { loggedIn, user, logout } = useOidcAuth();
+const { loggedIn, user } = useOidcAuth();
 
 const portalStore = usePortalStore();
 
@@ -187,14 +187,10 @@ const pilots = [
 
 watchEffect(() => {
     if (loggedIn.value) {
-        console.log(user.value)
         const claims = jose.decodeJwt(user.value.idToken);
-        console.log(claims);
         pilotId.value = claims.edumember_is_member_of?.[0] || '';
         const pilot = pilots.find(p => pilotId.value.endsWith(p.id));
         portalStore.$patch({
-            firstName: user.value.claims.given_name,
-            fullName: `${user.value.claims.given_name} ${user.value.claims.family_name}`,
             pilotLink: pilot?.url || '',
             institution: pilot?.institute || '',
         });

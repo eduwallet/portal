@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     public: {
       appType: 'portal',
       appName: 'portal',
+      appEnv: process.env.NUXT_PUBLIC_APP_ENV || 'development',
     },
   },
   i18n: {

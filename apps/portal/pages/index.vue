@@ -153,6 +153,7 @@ import * as jose from 'jose'
 const { loggedIn, user } = useOidcAuth();
 
 const portalStore = usePortalStore();
+const config = useRuntimeConfig();
 
 definePageMeta({
   layout: 'portal'
@@ -170,20 +171,77 @@ const allDone = computed(() => {
     return isEduidIssued.value && isEntitlementIssued.value && isDataChecked.value;
 });
 
-const pilots = [
-  {
-    id: 'eduwallet_pilot_deelnemer_dev',
-    institute: 'Koning Willem I College',
-    pilot: 'Machine Safety',
-    url: 'https://www.kw1c.nl/pilots/eduwallet_machien_safety',
-  },
-  {
-    id: 'eduwallet_pilot_kw1c_machine_safety',
-    institute: 'Koning Willem I College',
-    pilot: 'Machine Safety',
-    url: 'https://www.kw1c.nl/pilots/eduwallet_machien_safety',
-  },
-];
+const pilots = ['development', 'playground'].includes(config.public.appEnv)
+    ? [
+        {
+            id: 'eduwallet_pilot_deelnemer_dev',
+            institute: 'Koning Willem I College',
+            pilot: 'Machine Safety',
+            url: 'https://www.kw1c.nl/pilots/eduwallet_machien_safety',
+        },
+    ]
+    : [
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:6937f8c0-73a8-42e8-876b-de49c78c1444:eduwallet_pilot_surf_medewerkers',
+            institute: 'SURF/Npuls',
+            pilot: 'eduWallet Pilot SURF Medewerkers',
+            url: 'https://eduwallet.nl',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:cbb79ec1-8e38-4e97-b73d-67e42c8e91a5:eduwallet_pilot_deelnemer_tudelft_edubadges',
+            institute: 'TU Delft',
+            pilot: 'eduWallet Pilot deelnemer TUDelft eduBadges',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:bd05a9de-bf8d-4979-855c-e166bc56660c:eduwallet_pilot_deelnemer_rug_phd',
+            institute: 'RUG',
+            pilot: 'eduWallet Pilot deelnemer RUG PhD',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:54b6978c-6d0e-4bd2-af4b-6af466f37bd3:eduwallet_pilot_deelnemer_rug_edubadges',
+            institute: 'RUG',
+            pilot: 'eduWallet Pilot deelnemer RUG eduBadges',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:7820941d-b28d-4101-b447-7390df2a9331:eduwallet_pilot_deelnemer_rug_diploma_supplement',
+            institute: 'RUG',
+            pilot: 'eduWallet Pilot deelnemer RUG Diploma Supplement',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:b48728f0-c26f-41bc-9544-e072f0fbe8d6:eduwallet_pilot_deelnemer_hva_diploma_supplement',
+            institute: 'HvA',
+            pilot: 'eduWallet Pilot deelnemer HvA Diploma Supplement',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:3153aa6a-7fdc-4c5a-be32-d1daa506d31f:eduwallet_pilot_deelnemer_han-fontys_edubadges',
+            institute: 'Hogeschool van Amsterdam',
+            pilot: 'eduWallet Pilot deelnemer HAN-Fontys eduBadges',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:3153aa6a-7fdc-4c5a-be32-d1daa506d31f:eduwallet_pilot_deelnemer_han-fontys_edubadges',
+            institute: 'HAN & Fontys',
+            pilot: 'eduWallet Pilot deelnemer HAN-Fontys eduBadges',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:c0c151b3-c7d6-4715-ad5a-89d64bbfee92:eduwallet_pilot_deelnemer_kw1c_machine_veiligheid',
+            institute: 'KW1C',
+            pilot: 'eduWallet Pilot deelnemer KW1C Machine Veiligheid',
+            url: '',
+        },
+        {
+            id: 'urn:mace:surf.nl:invite.surfconext.nl:a1aead85-9a91-4481-8c2f-b7ce0b79a012:eduwallet_pilot_deelnemer_kw1c_zorgprofessionals',
+            institute: 'KW1C',
+            pilot: 'eduWallet Pilot deelnemer KW1C Zorgprofessionals',
+            url: '',
+        },
+    ];
 
 watchEffect(() => {
     if (loggedIn.value) {

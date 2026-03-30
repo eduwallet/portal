@@ -192,6 +192,12 @@ const pilots = ['development', 'playground'].includes(config.public.appEnv)
     : config.public.appEnv === 'production'
     ? [
         {
+            id: 'eduwallet_pilot_surf_medewerkers',
+            institute: 'SURF/Npuls',
+            pilot: 'eduWallet Pilot SURF Medewerkers',
+            url: 'https://eduwallet.nl',
+        },
+        {
             id: 'eduwallet_pilot_deelnemer_tudelft_edubadges',
             institute: 'TU Delft',
             pilot: 'eduWallet Pilot deelnemer TUDelft eduBadges',
@@ -228,12 +234,6 @@ const pilots = ['development', 'playground'].includes(config.public.appEnv)
             url: '',
         },
         {
-            id: 'eduwallet_pilot_deelnemer_han-fontys_edubadges',
-            institute: 'HAN & Fontys',
-            pilot: 'eduWallet Pilot deelnemer HAN-Fontys eduBadges',
-            url: '',
-        },
-        {
             id: 'eduwallet_pilot_deelnemer_kw1c_machine_veiligheid',
             institute: 'KW1C',
             pilot: 'eduWallet Pilot deelnemer KW1C Machine Veiligheid',
@@ -249,8 +249,10 @@ const pilots = ['development', 'playground'].includes(config.public.appEnv)
     : [];
 
 watchEffect(() => {
+    console.log('loggedIn', loggedIn.value);
     if (loggedIn.value) {
         const claims = jose.decodeJwt(user.value.idToken);
+        console.log('claims', claims);
         pilotId.value = claims.edumember_is_member_of?.[0] || '';
         const pilot = pilots.find(p => pilotId.value.endsWith(p.id));
         portalStore.$patch({

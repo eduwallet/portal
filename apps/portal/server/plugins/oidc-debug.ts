@@ -6,6 +6,7 @@ export default defineNitroPlugin((nitroApp) => {
     if (event.path.startsWith('/auth/oidc/callback')) {
         // After token exchange, log the JWT header to see kid + iss
         // Grab the id_token from the exchange response if you have it
+        console.log(JSON.stringify(event.context, null, 2))
         const idToken = event.context.oidcTokens?.idToken  // may vary
         if (idToken) {
             const [headerB64, , payloadB64] = idToken.split('.')

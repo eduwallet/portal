@@ -249,6 +249,10 @@ const pilots = ['development', 'playground'].includes(config.public.appEnv)
     : [];
 
 watchEffect(() => {
+    console.log('user', user.value);
+})
+
+watchEffect(() => {
     console.log('loggedIn', loggedIn.value);
     if (loggedIn.value) {
         const claims = jose.decodeJwt(user.value.idToken);

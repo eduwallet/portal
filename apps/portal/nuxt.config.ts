@@ -79,7 +79,7 @@ export default defineNuxtConfig({
           'edumember_is_member_of'
         ],
         validateAccessToken: false,
-        validateIdToken: true,
+        validateIdToken: false,
         skipAccessTokenParsing: false,
         exposeAccessToken: false,
         exposeIdToken: true,

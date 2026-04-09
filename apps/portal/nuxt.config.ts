@@ -48,12 +48,12 @@ export default defineNuxtConfig({
     providers: {
       oidc: {
         baseUrl: '',
-        clientId: process.env.NUXT_OIDC_PROVIDERS_OIDC_CLIENT_ID || '',
-        redirectUri: process.env.NUXT_OIDC_PROVIDERS_OIDC_REDIRECT_URI || 'https://portal.dev.eduwallet.nl/auth/oidc/callback',
-        clientSecret: process.env.NUXT_OIDC_PROVIDERS_OIDC_CLIENT_SECRET || '',
-        authorizationUrl: process.env.NUXT_OIDC_PROVIDERS_OIDC_AUTHORIZATION_URL || 'https://connect.test.surfconext.nl/oidc/authorize',
-        tokenUrl: process.env.NUXT_OIDC_PROVIDERS_OIDC_TOKEN_URL || 'https://connect.test.surfconext.nl/oidc/token',
-        openIdConfiguration: process.env.NUXT_OIDC_PROVIDERS_OIDC_OPENID_CONFIGURATION || 'https://connect.test.surfconext.nl/.well-known/openid-configuration',
+        clientId: process.env.NUXT_OIDC_PROVIDERS_OIDC_CLIENT_ID,
+        redirectUri: process.env.NUXT_OIDC_PROVIDERS_OIDC_REDIRECT_URI || '',
+        clientSecret: process.env.NUXT_OIDC_PROVIDERS_OIDC_CLIENT_SECRET,
+        authorizationUrl: process.env.NUXT_OIDC_PROVIDERS_OIDC_AUTHORIZATION_URL,
+        tokenUrl: process.env.NUXT_OIDC_PROVIDERS_OIDC_TOKEN_URL,
+        openIdConfiguration: process.env.NUXT_OIDC_PROVIDERS_OIDC_OPENID_CONFIGURATION,
         responseType: 'code',
         authenticationScheme: 'header',
         grantType: 'authorization_code',
@@ -79,7 +79,7 @@ export default defineNuxtConfig({
           'edumember_is_member_of'
         ],
         validateAccessToken: false,
-        validateIdToken: false,
+        validateIdToken: true,
         skipAccessTokenParsing: false,
         exposeAccessToken: false,
         exposeIdToken: true,

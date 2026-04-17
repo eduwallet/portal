@@ -114,30 +114,124 @@
               <div class="flex flex-wrap max-sm:justify-center gap-6">
                 <div class="space-y-1">
                   <img
-                    class="bg-black p-1 rounded w-full"
+                    class="bg-black p-1 mb-3 rounded w-full"
                     src="@surf/nuxt-base/assets/images/app-store-ios.png"
                     :alt="$t('download.app_store')"
                   />
 
-                  <img
-                    class="w-full"
-                    src="@surf/nuxt-base/assets/images/app-store-ios-sphereon-qr-code.png"
-                    :alt="$t('download.app_store')"
-                  />
+                  <NuxtLink
+                    to="https://apps.apple.com/us/app/sphereon-wallet/id1661096796"
+                  >
+                    <QrcodeSvg
+                        value="https://apps.apple.com/us/app/sphereon-wallet/id1661096796"
+                        :size="120"
+                    />
+                  </NuxtLink>
                 </div>
 
                 <div class="space-y-1">
                   <img
-                    class="bg-black p-1 rounded w-full"
+                    class="bg-black p-1 mb-3 rounded w-full"
                     src="@surf/nuxt-base/assets/images/app-store-android.png"
                     :alt="$t('download.play_store')"
                   />
 
+                  <NuxtLink
+                    to="https://play.google.com/store/apps/details?id=com.sphereon.ssi.wallet"
+                  >
+                    <QrcodeSvg
+                        value="https://play.google.com/store/apps/details?id=com.sphereon.ssi.wallet"
+                        :size="120"
+                    />
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </template>
+          
+          <template #paradym>
+            <div class="max-sm:text-center p-5">
+              <p class="text-xl font-bold mb-6">
+                {{ $t('download.scan') }}
+              </p>
+
+              <div class="flex flex-wrap max-sm:justify-center gap-6">
+                <div class="space-y-1">
                   <img
-                    class="w-full"
-                    src="@surf/nuxt-base/assets/images/app-store-android-sphereon-qr-code.png"
+                    class="bg-black p-1 mb-3 rounded w-full"
+                    src="@surf/nuxt-base/assets/images/app-store-ios.png"
+                    :alt="$t('download.app_store')"
+                  />
+
+                  <NuxtLink
+                    to="https://apps.apple.com/nl/app/paradym-wallet/id6449846111?l=en-GB"
+                  >
+                    <QrcodeSvg
+                        value="https://apps.apple.com/nl/app/paradym-wallet/id6449846111?l=en-GB"
+                        :size="120"
+                    />
+                  </NuxtLink>
+                </div>
+
+                <div class="space-y-1">
+                  <img
+                    class="bg-black p-1 mb-3 rounded w-full"
+                    src="@surf/nuxt-base/assets/images/app-store-android.png"
                     :alt="$t('download.play_store')"
                   />
+
+                  <NuxtLink
+                    to="https://play.google.com/store/apps/details?id=id.paradym.wallet"
+                  >
+                    <QrcodeSvg
+                        value="https://play.google.com/store/apps/details?id=id.paradym.wallet"
+                        :size="120"
+                    />
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </template>
+          
+          <template #unime>
+            <div class="max-sm:text-center p-5">
+              <p class="text-xl font-bold mb-6">
+                {{ $t('download.scan') }}
+              </p>
+
+              <div class="flex flex-wrap max-sm:justify-center gap-6">
+                <div class="space-y-1">
+                  <img
+                    class="bg-black p-1 mb-3 rounded w-full"
+                    src="@surf/nuxt-base/assets/images/app-store-ios.png"
+                    :alt="$t('download.app_store')"
+                  />
+
+                  <NuxtLink
+                    to="https://apps.apple.com/us/app/unime-identity-wallet/id6451394321"
+                  >
+                    <QrcodeSvg
+                        value="https://apps.apple.com/us/app/unime-identity-wallet/id6451394321"
+                        :size="120"
+                    />
+                  </NuxtLink>
+                </div>
+
+                <div class="space-y-1">
+                  <img
+                    class="bg-black p-1 mb-3 rounded w-full"
+                    src="@surf/nuxt-base/assets/images/app-store-android.png"
+                    :alt="$t('download.play_store')"
+                  />
+
+                  <NuxtLink
+                    to="https://play.google.com/store/apps/details?id=com.impierce.identity_wallet"
+                  >
+                    <QrcodeSvg
+                        value="https://play.google.com/store/apps/details?id=com.impierce.identity_wallet"
+                        :size="120"
+                    />
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -169,31 +263,25 @@ const route = useRoute();
 const emit = defineEmits(['cancel']);
 
 const items = [{
-  title: 'vendor.wwwallet.wallet',
-  subtitle: 'vendor.wwwallet.company',
-  image: '/images/wallet-wwwallet.png',
-  slot: 'wwwallet'
+  title: 'vendor.paradym.wallet',
+  subtitle: 'vendor.paradym.company',
+  image: '/images/wallet-paradym.jpg',
+  slot: 'paradym',
 }, {
   title: 'vendor.sphereon.wallet',
   subtitle: 'vendor.sphereon.company',
   image: '/images/wallet-sphereon.png',
   slot: 'sphereon',
-  disabled: true,
-}, {
-  title: 'vendor.paradym.wallet',
-  subtitle: 'vendor.paradym.company',
-  image: '/images/wallet-paradym.jpg',
-  disabled: true,
 }, {
   title: 'vendor.unime.wallet',
   subtitle: 'vendor.unime.company',
   image: '/images/wallet-unime.png',
-  disabled: true,
+  slot: 'unime',
 }, {
-  title: 'vendor.edi.wallet',
-  subtitle: 'vendor.edi.company',
-  image: '/images/wallet-nl-edi.png',
-  disabled: true,
+  title: 'vendor.wwwallet.wallet',
+  subtitle: 'vendor.wwwallet.company',
+  image: '/images/wallet-wwwallet.png',
+  // slot: 'wwwallet',
+  diabled: true,
 }];
 </script>
-

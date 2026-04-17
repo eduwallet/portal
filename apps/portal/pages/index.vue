@@ -130,14 +130,6 @@
                         <h4 class="text-black mb-4">{{ $t('great_you_are_ready') }}</h4>
                         <p class="mb-4" v-html="$t('ready_for_the_pilot')"></p>
                         <p class="mb-4" v-html="$t('pilot_info_provided_by', { institution: portalStore.institution })"></p>
-                        <UButton
-                            :to="portalStore.pilotLink"
-                            block
-                            color="primary"
-                            size="lg"
-                        >
-                            {{ $t('start_the_pilot') }}
-                        </UButton>
                     </div>
                 </div>
             </div>

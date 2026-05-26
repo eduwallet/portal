@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────────────
 # 1️⃣  Builder stage
 # ─────────────────────────────────────────────────────
-FROM node:22-alpine AS builder
+FROM node:24-alpine AS builder
 
 ENV PNPM_HOME="/pnpm" \
     PATH="$PNPM_HOME:$PATH" \
@@ -43,11 +43,9 @@ RUN for app in apps/portal ; do \
 # Each copies only its own .output/ (~30–60 MB compressed).
 # ─────────────────────────────────────────────────────
 
-FROM node:22-alpine AS portal
-USER node
+FROM gcr.io/distroless/nodejs24-debian12:nonroot AS portal
 WORKDIR /app
-COPY --from=builder --chown=node:node /workspace/apps/portal/.output ./.output
+COPY --from=builder --chown=65532:65532 /workspace/apps/portal/.output ./.output
 ENV NODE_ENV=production HOST=0.0.0.0 PORT=3000
 EXPOSE 3000
-ENTRYPOINT ["node"]
 CMD [".output/server/index.mjs"]

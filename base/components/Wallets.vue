@@ -37,50 +37,34 @@
       </Card>
 
       <Card class="space-y-4">
-        <UAccordion
-          :items="items"
-          variant="outline"
-          size="xl"
-          class="gap-5"
-        >
-          <template #trigger="{ item, open }">
-            <UButton color="neutral" variant="ghost" class="border rounded-lg border-gray-200 dark:border-gray-700">
-              <template #leading>
-                <img
-                  class="h-auto w-12"
-                  :src="item.image"
-                  alt=""
-                />
-              </template>
+        <UAccordion :items="items" class="gap-5">
+          <template #leading="{ item }">
+            <img class="h-auto w-12" :src="item.image" alt="" />
+          </template>
 
-              <div class="text-start">
-                <p class="font-bold text-lg">
-                  {{ $t(item.title) }}
-                </p>
+          <template #default="{ item }">
+            <div class="text-start ml-2">
+              <p class="font-bold text-lg">{{ $t(item.title) }}</p>
+              <p class="text-sm text-gray-400">{{ $t(item.subtitle) }}</p>
+            </div>
+          </template>
 
-                <p class="text-sm text-gray-400">
-                  {{ $t(item.subtitle) }}
-                </p>
-              </div>
-              
-              <template #trailing>
-                <UIcon
-                  v-if="!item.disabled"
-                  name="i-heroicons-chevron-down-20-solid"
-                  class="w-5 h-5 ms-auto transform transition-transform duration-200"
-                  :class="[open && 'rotate-180']"
-                />
-                <UButton
-                  v-else
-                  color="neutral"
-                  variant="soft"
-                  disabled
-                  class="max-md:hidden max-lg:ml-16 ms-auto -me-3"
-                >
-                  {{ $t('soon') }}
-                </UButton>
-              </template>
+          <template #trailing="{ item, open }">
+            <UButton
+              v-if="item.disabled"
+              color="neutral"
+              variant="soft"
+              disabled
+              class="max-md:hidden ms-auto -me-3"
+            >
+              {{ $t('soon') }}
             </UButton>
+            <UIcon
+              v-else
+              name="i-heroicons-chevron-down-20-solid"
+              class="w-5 h-5 ms-auto transform transition-transform duration-200"
+              :class="[open && 'rotate-180']"
+            />
           </template>
 
           <template #wwwallet>
@@ -281,6 +265,6 @@ const items = [{
   subtitle: 'vendor.wwwallet.company',
   image: '/images/wallet-wwwallet.png',
   // slot: 'wwwallet',
-  diabled: true,
+  disabled: true,
 }];
 </script>

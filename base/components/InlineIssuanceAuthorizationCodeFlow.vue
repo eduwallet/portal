@@ -45,26 +45,15 @@
             class="hidden lg:inline-flex"
             @click="isModalOpen = true"
         />
-        <UModal v-model:open="isModalOpen" @close="isModalOpen = false">
-            <UCard>
-                <template #header>
-                    <div class="flex items-center justify-end">
-                        <UButton
-                            color="neutral"
-                            variant="ghost"
-                            icon="i-heroicons-x-mark-20-solid"
-                            class="-my-1"
-                            @click="isModalOpen = false"
-                        />
-                    </div>
-                </template>
+        <UModal v-model:open="isModalOpen">
+            <template #body>
                 <QrcodeSvg
                     :value="qrUri"
                     :size="500"
                     :image-settings="imageSettings"
                     class="scale-90 -m-4"
                 />
-            </UCard>
+            </template>
         </UModal>
         <NuxtLink v-if="qrUri" :to="qrUri" class="w-full flex justify-center">
           <QrcodeSvg

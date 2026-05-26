@@ -13,7 +13,7 @@
       :src="avatarSrc"
       alt="Avatar"
       size="lg"
-      imgClass="object-cover"
+      :ui="{ image: 'object-cover' }"
     />
 
     <UButton
@@ -21,7 +21,7 @@
       :to="localePath('/login')"
       class="account__login"
       size="md"
-      color="white"
+      color="neutral"
       variant="outline"
     >
       {{ $t('log_in') }}
@@ -126,6 +126,8 @@ const logOut = () => {
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .account {
     @apply
         flex

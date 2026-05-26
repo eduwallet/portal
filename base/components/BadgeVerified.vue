@@ -9,6 +9,8 @@
 </template>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .badge-verified {
   @apply
     w-fit

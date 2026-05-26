@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-03-17',
+  compatibilityDate: '2026-05-26',
+  future: { compatibilityVersion: 4 },
+  srcDir: '.',
+  css: ['~/assets/css/main.css'],
   devtools: { enabled: false },
   $meta: {
     name: 'base',

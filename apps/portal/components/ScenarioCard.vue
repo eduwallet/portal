@@ -50,6 +50,8 @@ defineProps<{
 </script>
 
 <style scoped lang="css">
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .thumbnail {
     @apply
         w-full

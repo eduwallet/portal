@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     class="p-5 md:pr-8 rounded-[10px] border border-gray-200 bg-white flex max-lg:flex-col gap-5 items-start justify-between"
-    :class="{ 'hover:bg-opacity-30 transition-colors': !disabled }"
+    :class="{ 'hover:bg-white/30 transition-colors': !disabled }"
   >
     <div class="flex gap-5 sm:items-center max-sm:flex-wrap">
       <div class="h-auto w-12">
@@ -20,7 +20,7 @@
     </div>
 
     <UButton
-      :color="disabled ? 'gray' : 'primary'"
+      :color="disabled ? 'neutral' : 'primary'"
       :variant="disabled ? 'soft' : 'solid'"
       :disabled="disabled"
       block

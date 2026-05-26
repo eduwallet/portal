@@ -26,7 +26,7 @@
           <NuxtLink @click="isWalletsModalOpen=true" class="underline cursor-pointer text-blue-500">
             {{ $t('download.here') }}
           </NuxtLink>.
-          <UModal v-model="isWalletsModalOpen" :ui="{ width: 'w-full sm:max-w-6xl' }">
+          <UModal v-model:open="isWalletsModalOpen" :ui="{ content: 'sm:max-w-6xl' }">
             <Wallets @cancel="isWalletsModalOpen=false" />
           </UModal>
         </span>
@@ -65,9 +65,9 @@
     </template>
 
     <UButton
-      color="white"
-      class="text-gray-400 underline"
+      color="neutral"
       variant="link"
+      class="text-gray-400 underline"
       @click="$emit('cancel')"
     >
       {{ $t('cancel') }}

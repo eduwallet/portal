@@ -21,6 +21,8 @@ const switchLocalePath = useSwitchLocalePath()
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .language-switcher {
     @apply
         flex

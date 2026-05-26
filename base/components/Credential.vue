@@ -85,6 +85,8 @@ defineProps<{
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .title {
   @apply mb-3;
 }

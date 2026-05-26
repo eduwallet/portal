@@ -4,7 +4,7 @@
         <h1>{{ $t('_wallet.download') }}</h1>
         <UButton
             v-if="!route.path.includes('/wallet')"
-            color="gray"
+            color="neutral"
             variant="ghost"
             icon="i-heroicons-x-mark-20-solid"
             class="flex"
@@ -39,13 +39,12 @@
       <Card class="space-y-4">
         <UAccordion
           :items="items"
-          color="white"
           variant="outline"
           size="xl"
           class="gap-5"
         >
-          <template #default="{ item, index, open }">
-            <UButton color="gray" variant="ghost" class="border rounded-lg border-gray-200 dark:border-gray-700" :ui="{ rounded: 'rounded-none', padding: { sm: 'p-3' } }">
+          <template #trigger="{ item, open }">
+            <UButton color="neutral" variant="ghost" class="border rounded-lg border-gray-200 dark:border-gray-700">
               <template #leading>
                 <img
                   class="h-auto w-12"
@@ -73,7 +72,7 @@
                 />
                 <UButton
                   v-else
-                  color="gray"
+                  color="neutral"
                   variant="soft"
                   disabled
                   class="max-md:hidden max-lg:ml-16 ms-auto -me-3"

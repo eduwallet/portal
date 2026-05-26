@@ -5,6 +5,8 @@
 </template>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .footer {
     @apply
         fixed

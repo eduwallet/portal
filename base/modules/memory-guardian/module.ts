@@ -15,7 +15,6 @@ export default defineNuxtModule({
 
     if (options.server) {
       addServerPlugin(resolve('./runtime/server/plugin'))
-      nuxt.options.serverMiddleware = nuxt.options.serverMiddleware || []
     }
   },
 })

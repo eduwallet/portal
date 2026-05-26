@@ -1,33 +1,31 @@
 
 <template>
-    <div class="language-dropdown">
-        <USelectMenu
-            v-model="selected"
-            @update:model-value="navigateTo(switchLocalePath(($event.toLowerCase() as 'nl' | 'en')))"
-            :options="options"
-            value-attribute="id"
-            option-attribute="name"
-            class="max-md:hidden w-16"
-            variant="none"
-            :ui-menu="{ width: 'w-36' }"
-            :popper="{ placement: 'bottom-end' }"
-        >
-            <template #option="{ option: l }" class="min-w-fit">
-                <img :src="`/images/flag/${l.id.toUpperCase()}.png`" />
-                <span class="text-sm">{{ $t(`_language.${l.name.toLowerCase()}`) }}</span>
+    <div class="language-dropdown max-md:hidden mr-2">
+        <UDropdownMenu :items="items">
+            <UButton variant="ghost" color="neutral" size="sm" class="font-medium px-1" trailing-icon="i-heroicons-chevron-down-20-solid">
+                {{ locale.toUpperCase() }}
+            </UButton>
+            <template #item="{ item }">
+                <div class="flex items-center gap-2">
+                    <img :src="`/images/flag/${item.id}.png`" class="w-4 h-auto" />
+                    <span>{{ item.label }}</span>
+                </div>
             </template>
-        </USelectMenu>
+        </UDropdownMenu>
     </div>
 </template>
 
 <script setup lang="ts">
-const { locale, availableLocales } = useI18n();
+import type { DropdownMenuItem } from '@nuxt/ui';
+
+const { locale, availableLocales, t } = useI18n();
 const switchLocalePath = useSwitchLocalePath();
 
-const options = computed(() => availableLocales.map(l => ({
-  id: l.toUpperCase(),
-  name: l.toUpperCase(),
-})));
-
-const selected = ref(locale.value.toUpperCase());
+const items = computed(() => [
+    availableLocales.map(l => ({
+        id: l.toUpperCase(),
+        label: t(`_language.${l}`),
+        onSelect: () => navigateTo(switchLocalePath(l)),
+    }))
+]);
 </script>

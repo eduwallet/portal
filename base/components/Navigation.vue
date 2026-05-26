@@ -158,6 +158,8 @@ const logo = computed(() =>
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .navigation {
     @apply
         px-4
@@ -317,8 +319,7 @@ const logo = computed(() =>
         fixed
         w-full
         h-full
-        bg-black
-        bg-opacity-85
+        bg-black/85
         opacity-0
         transition-opacity
         duration-500

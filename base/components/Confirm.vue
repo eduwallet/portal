@@ -1,15 +1,15 @@
 <template>
   <UModal>
-    <UCard :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+    <UCard>
         <template #header>
             <div class="flex items-center justify-between">
                 <h3>{{ $t(title) }}</h3>
                 <UButton
-                    color="gray"
+                    color="neutral"
                     variant="ghost"
                     icon="i-heroicons-x-mark-20-solid"
                     class="-my-1"
-                    @click="modal.close"
+                    @click="overlay.close"
                 />
             </div>
         </template>
@@ -21,8 +21,8 @@
                 <UButton
                     class="flex-grow justify-center"
                     variant="outline"
-                    color="red"
-                    @click="modal.close"
+                    color="error"
+                    @click="overlay.close"
                 >
                     {{ $t('cancel') }}
                 </UButton>
@@ -43,10 +43,10 @@ defineProps<{
 
 const emit = defineEmits(['confirm']);
 
-const modal = useModal();
+const overlay = useOverlay();
 
 const onConfirm = () => {
     emit('confirm');
-    modal.close();
+    overlay.close();
 };
 </script>

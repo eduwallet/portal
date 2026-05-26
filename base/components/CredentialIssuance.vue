@@ -48,7 +48,7 @@ if (error.value) {
   toast.add({
     title: t('_notifications.error.credential_offer'),
     icon: 'i-heroicons-x-circle-16-solid',
-    color: 'red',
+    color: 'error',
   });
   navigateTo(String(route.query.returnUrl));
 }
@@ -84,7 +84,7 @@ watch(
       toast.add({
         title: t(statusData.value?.result || '_notifications.error.credential_offer'),
         icon: 'i-heroicons-x-circle-16-solid',
-        color: 'red',
+        color: 'error',
       });
     }
   },

@@ -32,12 +32,12 @@ const resultStore = useResultStore();
 const applicationStore = useApplicationStore();
 const localePath = useLocalePath();
 
-const modal = useModal();
+const overlay = useOverlay();
 const toast = useToast();
 const { t } = useI18n();
 
 function openModal() {
-  modal.open(Confirm, {
+  overlay.open(Confirm, {
     title: 'confirm_reset_demo.title',
     description: 'confirm_reset_demo.description',
     onConfirm() {
@@ -51,7 +51,7 @@ function openModal() {
         title: t('confirm_reset_demo.success'),
         id: 'confirm-reset-success',
         icon: 'i-heroicons-check-circle-16-solid',
-        color: 'green',
+        color: 'success',
       });
       navigateTo(localePath('/'));
     }
@@ -60,6 +60,8 @@ function openModal() {
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .tools {
     @apply
         w-full
@@ -68,8 +70,8 @@ function openModal() {
         pt-2
         pb-1
         px-3
-        bg-primary
         text-white
     ;
+    background-color: var(--ui-primary);
 }
 </style>

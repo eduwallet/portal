@@ -33,6 +33,8 @@ const logOut = () => {
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .account {
     @apply
         flex

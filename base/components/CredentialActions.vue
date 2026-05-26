@@ -15,21 +15,20 @@
                     class="add-to-wallet-button"
                     block
                     :trailing="false"
-                    :color="issuedAt ? 'white' : 'green'"
+                    :color="issuedAt ? 'neutral' : 'green'"
                     :label="$t(issuedAt ? 'added_to_wallet' : 'add_to_wallet')"
                     variant="solid"
                 />
             </div>
-            <UDropdown
+            <UDropdownMenu
                 v-if="issueItems.length"
                 :items="issueItems"
                 :popper="{ placement: 'bottom-end' }"
-                :ui="{
-                    width: 'w-72',
-                }"
+                :ui="{ content: 'w-72' }"
             >
                 <UButton
-                    color="white"
+                    color="neutral"
+                    variant="ghost"
                     icon="i-heroicons-ellipsis-horizontal"
                 />
                 <template #item="{ item }">
@@ -50,7 +49,7 @@
                     />
                     <span>{{ $t(item.label) }}</span>
                 </template>
-            </UDropdown>
+            </UDropdownMenu>
         </div>
     </div>
 
@@ -73,7 +72,7 @@
 import SvgoOfficeFilePdf1 from '~/assets/icons/office-file-pdf-1.svg';
 import SvgoDownloadBottom from '~/assets/icons/download-bottom.svg';
 import SvgoPrintText from '~/assets/icons/print-text.svg';
-import type { DropdownItem } from '#ui/types';
+import type { DropdownMenuItem } from '@nuxt/ui';
 
 const props = defineProps<{
   presentationUrl?: string;
@@ -87,7 +86,7 @@ const props = defineProps<{
 const { locale } = useI18n()
 
 const issueItems = computed(() => {
-  const items: DropdownItem[] = [];
+  const items: DropdownMenuItem[] = [];
 
   if (!props.issueOptions) return items;
 
@@ -117,6 +116,8 @@ const issueItems = computed(() => {
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .download {
   @apply
     flex

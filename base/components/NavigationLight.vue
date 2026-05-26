@@ -2,7 +2,7 @@
     <nav class="navigation">
         <div class="navigation__container-left">
             <img
-                v-if="logo && imageBaseUrl"
+                v-if="logo"
                 :src="logo"
                 class="navigation__logo"
             />
@@ -150,14 +150,17 @@ const imageBaseUrl = computed(() => {
   return environmentStore.variables.find(v => v.key === 'imageBaseUrl')?.value || '';
 });
 
-const logo = computed(() =>
-    maybeLogo || appName.includes('registration') || appName.includes('exam')
-        ? maybeLogo
-        : `${imageBaseUrl.value}/images/${appName.split('-')[0]}/logos/logo.png`
-);
+const logo = computed(() => {
+    if (maybeLogo) return maybeLogo;
+    if (appName.includes('registration') || appName.includes('exam')) return '';
+    if (!imageBaseUrl.value) return '';
+    return `${imageBaseUrl.value}/images/${appName.split('-')[0]}/logos/logo.png`;
+});
 </script>
 
 <style lang="css" scoped>
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .navigation {
     @apply
         px-4
@@ -324,8 +327,7 @@ const logo = computed(() =>
         fixed
         w-full
         h-full
-        bg-black
-        bg-opacity-85
+        bg-black/85
         opacity-0
         transition-opacity
         duration-500

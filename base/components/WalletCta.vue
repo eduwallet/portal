@@ -10,8 +10,8 @@
         {{ $t('explore_options') }}
         </NuxtLink>
         <UModal
-            v-model="isWalletsModalOpen" 
-            :ui="{ width: 'w-full sm:max-w-6xl' }"
+            v-model:open="isWalletsModalOpen"
+            :ui="{ content: 'sm:max-w-6xl' }"
         >
             <Wallets @cancel="isWalletsModalOpen=false"/>
         </UModal>

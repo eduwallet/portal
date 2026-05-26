@@ -39,12 +39,12 @@
                     class="hidden lg:inline-flex"
                     @click="isModalOpen = true"
                 />
-                <UModal v-model="isModalOpen" @close="isModalOpen = false">
+                <UModal v-model:open="isModalOpen" @close="isModalOpen = false">
                     <UCard>
                         <template #header>
                             <div class="flex items-center justify-end">
                                 <UButton
-                                    color="gray"
+                                    color="neutral"
                                     variant="ghost"
                                     icon="i-heroicons-x-mark-20-solid"
                                     class="-my-1"
@@ -63,7 +63,7 @@
                 {{ $t(qrUri ? 'scan_qr_code' : 'waiting_for_qr_code') }}
             </p>
             <UButton
-                color="black"
+                color="neutral"
                 variant="ghost"
                 icon="i-heroicons-x-mark-20-solid"
                 class="self-start ms-auto -mt-2 -me-2"
@@ -83,7 +83,7 @@
                 {{ $t('follow_wallet_instructions') }}
             </p>
             <UButton
-                color="black"
+                color="neutral"
                 variant="ghost"
                 icon="i-heroicons-x-mark-20-solid"
                 class="self-start ms-auto -mt-2 -me-2"
@@ -110,7 +110,7 @@
                 <span class="font-bold">{{ validity }}</span>
             </p>
             <UButton
-                color="black"
+                color="neutral"
                 variant="ghost"
                 icon="i-heroicons-trash-solid"
                 class="self-start ms-auto -mt-2 -me-2"
@@ -230,7 +230,7 @@ const init = async () => {
         toast.add({
             title: t('_notifications.error.qr'),
             icon: 'i-heroicons-x-circle-16-solid',
-            color: 'red',
+            color: 'error',
         });
     }
 };
@@ -250,7 +250,7 @@ const startChecking = () => {
                     toast.add({
                         title: t('_notifications.error.verifiable_presentation'),
                         icon: 'i-heroicons-x-circle-16-solid',
-                        color: 'red',
+                        color: 'error',
                     });
                     throw new Error(t('_notifications.error.verifiable_presentation'));
                 }

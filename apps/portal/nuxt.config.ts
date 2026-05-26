@@ -1,6 +1,9 @@
 export default defineNuxtConfig({
   extends: '@surf/nuxt-base',
-  compatibilityDate: '2025-03-17',
+  compatibilityDate: '2026-05-26',
+  future: { compatibilityVersion: 4 },
+  srcDir: '.',
+  css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/ui',
     '@pinia/nuxt',
@@ -11,7 +14,9 @@ export default defineNuxtConfig({
     'nuxt-oidc-auth',
   ],
   ui: {
-    safelistColors: ['primary', 'green'],
+    theme: {
+      colors: ['primary', 'green', 'blue', 'red', 'yellow', 'orange', 'pink', 'magenta', 'neutral'],
+    },
   },
   runtimeConfig: {
     public: {

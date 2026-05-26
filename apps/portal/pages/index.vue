@@ -63,7 +63,7 @@
                             >
                                 {{ $t('show_wallets') }}
                             </UButton>
-                            <UModal v-model="isWalletsModalOpen" :ui="{ width: 'w-full sm:max-w-6xl' }">
+                            <UModal v-model:open="isWalletsModalOpen" :ui="{ content: 'sm:max-w-6xl' }">
                                 <Wallets @cancel="isWalletsModalOpen=false" />
                             </UModal>
                         </div>
@@ -110,7 +110,7 @@
                             />
                             <UButton
                                 block
-                                :color="isDataChecked ? 'blue' : 'gray'"
+                                :color="isDataChecked ? 'blue' : 'neutral'"
                                 size="lg"
                                 class="whitespace-nowrap"
                                 :icon="isDataChecked ? 'i-heroicons-check-circle-solid' : 'mdi-circle-outline'"

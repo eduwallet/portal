@@ -9,6 +9,8 @@
 </template>
     
 <style scoped lang="css">
+@reference "tailwindcss";
+@reference "@nuxt/ui";
 .main {
   @apply pt-16 pb-16;
 }

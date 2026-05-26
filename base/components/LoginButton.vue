@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     class="p-5 md:pr-8 rounded-[10px] border border-primary-900 bg-white flex gap-5 items-center"
-    :class="{ 'hover:bg-opacity-30 transition-colors': to }"
+    :class="{ 'hover:bg-white/30 transition-colors': to }"
     :to="to"
   >
     <div class="h-auto w-12">

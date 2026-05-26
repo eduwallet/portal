@@ -30,9 +30,9 @@
           {{ $t('scan_qr_code') }}
         </p>
         <UButton
-            color="white"
-            class="text-gray-400 underline text-sm"
+            color="neutral"
             variant="link"
+            class="text-gray-400 underline text-sm"
             @click="reset()"
         >
             {{ $t('cancel') }}
@@ -45,12 +45,12 @@
             class="hidden lg:inline-flex"
             @click="isModalOpen = true"
         />
-        <UModal v-model="isModalOpen" @close="isModalOpen = false">
+        <UModal v-model:open="isModalOpen" @close="isModalOpen = false">
             <UCard>
                 <template #header>
                     <div class="flex items-center justify-end">
                         <UButton
-                            color="gray"
+                            color="neutral"
                             variant="ghost"
                             icon="i-heroicons-x-mark-20-solid"
                             class="-my-1"
@@ -84,9 +84,9 @@
           {{ $t('follow_wallet_instructions') }}
         </p>
         <UButton
-            color="white"
-            class="text-gray-400 underline text-sm"
+            color="neutral"
             variant="link"
+            class="text-gray-400 underline text-sm"
             @click="reset()"
         >
             {{ $t('cancel') }}
@@ -99,7 +99,7 @@
       <div class="w-full flex flex-col gap-2 items-center">
         <UButton
             block
-            color="white"
+            color="neutral" variant="ghost"
             size="lg"
             icon="i-heroicons-check-circle-solid"
             class="whitespace-nowrap text-blue-700"
@@ -108,9 +108,9 @@
             {{ $t('added_to_wallet') }}
         </UButton>
         <UButton
-            color="white"
-            class="text-gray-400 underline text-sm"
+            color="neutral"
             variant="link"
+            class="text-gray-400 underline text-sm"
             @click="addAgain()"
         >
             {{ $t('add_to_wallet_again') }}
@@ -189,7 +189,7 @@ const init = async () => {
         toast.add({
             title: t('_notifications.error.qr'),
             icon: 'i-heroicons-x-circle-16-solid',
-            color: 'red',
+            color: 'error',
         });
     }
 };

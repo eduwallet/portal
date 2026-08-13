@@ -11,6 +11,7 @@
         </NuxtLink>
         <UModal
             v-model:open="isWalletsModalOpen"
+            scrollable
             :ui="{ content: 'sm:max-w-6xl' }"
         >
             <template #content>

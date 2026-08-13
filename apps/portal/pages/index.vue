@@ -63,7 +63,7 @@
                             >
                                 {{ $t('show_wallets') }}
                             </UButton>
-                            <UModal v-model:open="isWalletsModalOpen" :ui="{ content: 'sm:max-w-6xl' }">
+                            <UModal v-model:open="isWalletsModalOpen" scrollable :ui="{ content: 'sm:max-w-6xl' }">
                                 <template #content>
                                     <Wallets @cancel="isWalletsModalOpen=false" />
                                 </template>

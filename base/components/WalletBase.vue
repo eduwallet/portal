@@ -34,7 +34,7 @@
           <NuxtLink @click="isWalletsModalOpen=true" class="underline cursor-pointer text-blue-500">
             {{ $t('download.here') }}
           </NuxtLink>.
-          <UModal v-model:open="isWalletsModalOpen" :ui="{ content: 'sm:max-w-6xl' }">
+          <UModal v-model:open="isWalletsModalOpen" scrollable :ui="{ content: 'sm:max-w-6xl' }">
             <template #content>
               <Wallets @cancel="isWalletsModalOpen=false"/>
             </template>

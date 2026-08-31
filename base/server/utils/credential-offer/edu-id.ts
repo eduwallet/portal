@@ -1,5 +1,5 @@
 import { Persona } from '~/server/api/personas/types';
-import { CreateOfferResponse, CreateOfferBackendResponse, makeId } from '.';
+import { CreateOfferResponse, CreateOfferBackendResponse, getIssuerBaseUrl, makeId } from '.';
 
 interface EduIdCredentialOfferBody {
     agentPrefix: string;
@@ -16,9 +16,9 @@ export const createEduIdCredentialOffer = async (body: EduIdCredentialOfferBody)
     }
 
     const issuerToken = process.env.NUXT_ISSUER_TOKEN || '';
-    const agentBaseUrl = process.env.NUXT_PUBLIC_AGENT_BASE_URL || '';
+    const issuerBaseUrl = getIssuerBaseUrl(agentPrefix);
 
-    const response: CreateOfferBackendResponse = await $fetch(`${agentBaseUrl}/${agentPrefix}/api/create-offer`, {
+    const response: CreateOfferBackendResponse = await $fetch(`${issuerBaseUrl}/api/create-offer`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -56,9 +56,9 @@ export const createEduIdCredentialOffer = async (body: EduIdCredentialOfferBody)
 
 export const createAuthorizationCodeFlowEduIdCredentialOffer = async (body: EduIdCredentialOfferBody): Promise<Omit<CreateOfferResponse, 'pin'>> => {
     const issuerToken = process.env.NUXT_EDUID_ISSUER_TOKEN || '';
-    const agentBaseUrl = process.env.NUXT_PUBLIC_EDUID_ISSUER_BASE_URL || '';
+    const eduIdIssuerBaseUrl = process.env.NUXT_PUBLIC_EDUID_ISSUER_BASE_URL || '';
 
-    const response: CreateOfferBackendResponse = await $fetch(`${agentBaseUrl}/api/create-offer`, {
+    const response: CreateOfferBackendResponse = await $fetch(`${eduIdIssuerBaseUrl}/api/create-offer`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

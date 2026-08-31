@@ -22,6 +22,17 @@ export interface CreateOfferBackendResponse {
     txCode: number | string;
 }
 
+/**
+ * Every issuer agent has its own host, e.g. https://mbob.issuer.dev.eduwallet.nl.
+ * NUXT_PUBLIC_ISSUER_BASE_URL holds the template for those hosts, with the agent
+ * prefix (the institution shortcode, or e.g. 'epi') marked as {prefix}.
+ */
+export const getIssuerBaseUrl = (agentPrefix: string): string => {
+    const issuerBaseUrl = process.env.NUXT_PUBLIC_ISSUER_BASE_URL || '';
+
+    return issuerBaseUrl.replace('{prefix}', agentPrefix);
+};
+
 export const makeId = (length: number): string => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     

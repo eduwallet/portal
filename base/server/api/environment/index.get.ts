@@ -9,8 +9,8 @@ export default defineEventHandler(() => {
             value: process.env.NUXT_PUBLIC_IMAGE_BASE_URL || '',
         },
         {
-            key: 'agentBaseUrl',
-            value: process.env.NUXT_PUBLIC_AGENT_BASE_URL || '',
+            key: 'issuerBaseUrl',
+            value: process.env.NUXT_PUBLIC_ISSUER_BASE_URL || '',
         },
         {
             key: 'verifierBaseUrl',

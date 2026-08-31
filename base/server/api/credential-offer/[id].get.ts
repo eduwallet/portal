@@ -1,3 +1,5 @@
+import { getIssuerBaseUrl } from '../../utils/credential-offer';
+
 interface Res {
   status: string;
   code?: string;
@@ -10,10 +12,10 @@ export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
   const { agentPrefix } = getQuery(event);
   const issuerToken = process.env.NUXT_ISSUER_TOKEN || '';
-  const agentBaseUrl = process.env.NUXT_PUBLIC_AGENT_BASE_URL || '';
+  const issuerBaseUrl = getIssuerBaseUrl(String(agentPrefix));
 
   try {
-    const res: Res = await $fetch(`${agentBaseUrl}/${agentPrefix}/api/check-offer`, {
+    const res: Res = await $fetch(`${issuerBaseUrl}/api/check-offer`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -9,10 +9,10 @@ interface Res {
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
   const issuerToken = process.env.NUXT_EDUID_ISSUER_TOKEN || '';
-  const agentBaseUrl = process.env.NUXT_PUBLIC_EDUID_ISSUER_BASE_URL || '';
+  const eduIdIssuerBaseUrl = process.env.NUXT_PUBLIC_EDUID_ISSUER_BASE_URL || '';
 
   try {
-    const res: Res = await $fetch(`${agentBaseUrl}/api/check-offer`, {
+    const res: Res = await $fetch(`${eduIdIssuerBaseUrl}/api/check-offer`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

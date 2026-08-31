@@ -62,7 +62,7 @@ Default locale is Dutch (`nl`), with English (`en`) as secondary. Locale files l
 Copy `apps/portal/.env.example` to `apps/portal/.env` and fill in:
 - OIDC provider credentials (`NUXT_OIDC_PROVIDERS_OIDC_*`)
 - Issuer/verifier tokens (`NUXT_ISSUER_TOKEN`, `NUXT_VERIFIER_TOKEN`, `NUXT_EDUID_ISSUER_TOKEN`)
-- External service URLs (`NUXT_PUBLIC_AGENT_BASE_URL`, `NUXT_PUBLIC_API_BASE_URL`, etc.)
+- External service URLs (`NUXT_PUBLIC_ISSUER_BASE_URL`, `NUXT_PUBLIC_API_BASE_URL`, etc.)
 - OIDC session secrets (`NUXT_OIDC_SESSION_SECRET`, `NUXT_OIDC_TOKEN_KEY`, `NUXT_OIDC_AUTH_SESSION_SECRET`)
 
 `NUXT_PUBLIC_APP_ENV` controls which pilots are shown: `development`/`playground`, `staging`, or `production`.

@@ -1,5 +1,5 @@
 import { Program } from '@surf/nuxt-base/server/api/programs/types';
-import { CreateOfferResponse, CreateOfferBackendResponse, makeId } from '.';
+import { CreateOfferResponse, CreateOfferBackendResponse, getIssuerBaseUrl, makeId } from '.';
 
 interface EnrollmentCredentialOfferBody {
     agentPrefix: string;
@@ -16,9 +16,9 @@ export const createEnrollmentCredentialOffer = async (body: EnrollmentCredential
     }
 
     const issuerToken = process.env.NUXT_ISSUER_TOKEN || '';
-    const agentBaseUrl = process.env.NUXT_PUBLIC_AGENT_BASE_URL || '';
+    const issuerBaseUrl = getIssuerBaseUrl(agentPrefix);
 
-    const response: CreateOfferBackendResponse = await $fetch(`${agentBaseUrl}/${agentPrefix}/api/create-offer`, {
+    const response: CreateOfferBackendResponse = await $fetch(`${issuerBaseUrl}/api/create-offer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

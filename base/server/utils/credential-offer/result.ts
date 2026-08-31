@@ -1,5 +1,5 @@
 import { fetchCourses } from '../../api/courses/index.get';
-import { CreateOfferResponse, CreateOfferBackendResponse, makeId } from '.'
+import { CreateOfferResponse, CreateOfferBackendResponse, getIssuerBaseUrl, makeId } from '.'
 import { toExam } from '../courses/mapper';
 
 interface ResultCredentialOfferBody {
@@ -42,11 +42,11 @@ export const createResultCredentialOffer = async (body: ResultCredentialOfferBod
 
     const imageBaseUrl = process.env.NUXT_PUBLIC_IMAGE_BASE_URL || '';
     const issuerToken = process.env.NUXT_ISSUER_TOKEN || '';
-    const agentBaseUrl = process.env.NUXT_PUBLIC_AGENT_BASE_URL || '';
+    const issuerBaseUrl = getIssuerBaseUrl(agentPrefix);
     const appName = config.public.appName as string;
     const shortCode = appName.split('-')[1];
 
-    const response: CreateOfferBackendResponse = await $fetch(`${agentBaseUrl}/${agentPrefix}/api/create-offer`, {
+    const response: CreateOfferBackendResponse = await $fetch(`${issuerBaseUrl}/api/create-offer`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

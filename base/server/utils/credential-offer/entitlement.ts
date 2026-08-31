@@ -12,9 +12,9 @@ export const createAuthorizationCodeFlowEntitlementCredentialOffer = async (body
     }
 
     const issuerToken = process.env.NUXT_EDUID_ISSUER_TOKEN || '';
-    const agentBaseUrl = process.env.NUXT_PUBLIC_EDUID_ISSUER_BASE_URL || '';
+    const eduIdIssuerBaseUrl = process.env.NUXT_PUBLIC_EDUID_ISSUER_BASE_URL || '';
 
-    const response: CreateOfferBackendResponse = await $fetch(`${agentBaseUrl}/api/create-offer`, {
+    const response: CreateOfferBackendResponse = await $fetch(`${eduIdIssuerBaseUrl}/api/create-offer`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

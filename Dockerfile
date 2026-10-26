@@ -43,7 +43,7 @@ RUN for app in apps/portal ; do \
 # Each copies only its own .output/ (~30–60 MB compressed).
 # ─────────────────────────────────────────────────────
 
-FROM gcr.io/distroless/nodejs24-debian12:nonroot AS portal
+FROM gcr.io/distroless/nodejs24-debian13:nonroot AS portal
 WORKDIR /app
 COPY --from=builder --chown=65532:65532 /workspace/apps/portal/.output ./.output
 ENV NODE_ENV=production HOST=0.0.0.0 PORT=3000
